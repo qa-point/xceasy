@@ -2,7 +2,7 @@
 
 All notable XCEasy changes are documented here. The project follows Semantic Versioning after the `0.1.0` contract baseline.
 
-## Unreleased
+## [0.1.0] - 2026-08-26
 
 ### Changed
 
@@ -30,8 +30,6 @@ All notable XCEasy changes are documented here. The project follows Semantic Ver
 - Defined the initial canonical diagnostic event schema `1.0.0`, including symbolic selector selection and bounded collection observations for human and AI-assisted debugging.
 
 These source-breaking changes intentionally replace the unpublished beta API instead of retaining deprecated aliases.
-
-## [0.1.0] - 2026-08-09
 
 ### Added
 
