@@ -105,7 +105,7 @@ internal struct XCEasyDiagnosticBundleWriter {
             runId: ProcessInfo.processInfo.environment["XC_EASY_RUN_ID"],
             deviceId: ProcessInfo.processInfo.environment["XC_EASY_DEVICE_ID"],
             attempt: ProcessInfo.processInfo.environment["XC_EASY_ATTEMPT"].flatMap(Int.init) ?? 1,
-            frameworkVersion: "0.1.0",
+            frameworkVersion: "0.1.1",
             locale: XCEasyConfig.localization.rawValue,
             timezone: TimeZone.current.identifier,
             git: .init(

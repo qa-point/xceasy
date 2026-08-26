@@ -34,7 +34,11 @@ extension XCEasyUIElement {
         observe(
             expectedState: expected ? "present" : XCEasyElementState.absent.rawValue,
             timeout: timeout,
-            parentOperationId: parentOperationId
+            parentOperationId: parentOperationId,
+            // Asking XCUI for the count of a scoped query while its last match disappears can
+            // record an XCTest infrastructure failure instead of returning zero. The selected
+            // element's `exists` value is sufficient for an absence observation and remains safe.
+            collectCandidateCount: expected
         ) { observation in
             expected ? observation.state != .absent : observation.state == .absent
         }.matched

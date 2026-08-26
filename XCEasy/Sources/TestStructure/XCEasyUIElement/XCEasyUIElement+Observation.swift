@@ -48,6 +48,7 @@ extension XCEasyUIElement {
         expectedState: String,
         timeout: TimeInterval,
         parentOperationId: String? = nil,
+        collectCandidateCount: Bool? = nil,
         matches: (XCEasyElementObservation) -> Bool
     ) -> ObservationResult<XCEasyElementObservation> {
         let evidenceLevel = XCEasyConfig.uiQueryEvidenceLevel
@@ -71,7 +72,9 @@ extension XCEasyUIElement {
             timeout: timeout,
             interval: Self.stateObservationInterval,
             sample: {
-                self.currentObservation(collectCandidateCount: evidenceLevel != .off)
+                self.currentObservation(
+                    collectCandidateCount: collectCandidateCount ?? (evidenceLevel != .off)
+                )
             },
             matches: matches
         )

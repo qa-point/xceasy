@@ -2,6 +2,12 @@
 
 All notable XCEasy changes are documented here. The project follows Semantic Versioning after the `0.1.0` contract baseline.
 
+## [0.1.1] - 2026-08-27
+
+### Fixed
+
+- Made scoped `assertDoesNotExist` observations safe when the last matching child disappears, avoiding an XCTest query-count failure after the expected absent state is reached.
+
 ## [0.1.0] - 2026-08-26
 
 ### Changed
