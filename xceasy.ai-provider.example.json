@@ -1,0 +1,6 @@
+{
+  "schemaVersion": "1.0.0",
+  "providerId": "my-healing-provider",
+  "command": ["/absolute/path/to/provider-adapter"],
+  "timeoutSeconds": 120
+}

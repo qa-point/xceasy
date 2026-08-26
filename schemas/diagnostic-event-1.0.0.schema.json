@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qa-point.dev/xceasy/schemas/diagnostic-event-1.0.0.schema.json",
+  "title": "XCEasy diagnostic event 1.0.0",
+  "type": "object",
+  "required": [
+    "schemaVersion", "timestamp", "monotonicNanoseconds", "event", "level",
+    "processId", "threadId", "privacy"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "1.0.0"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "monotonicNanoseconds": {"type": "integer", "minimum": 0},
+    "event": {"type": "string", "minLength": 1},
+    "level": {"type": "string", "enum": ["debug", "info", "warning", "error"]},
+    "testId": {"type": "string", "minLength": 1},
+    "executionId": {"type": "string", "minLength": 1},
+    "runId": {"type": "string", "minLength": 1},
+    "deviceId": {"type": "string", "minLength": 1},
+    "shardIndex": {"type": "integer", "minimum": 0},
+    "attempt": {"type": "integer", "minimum": 1},
+    "processId": {"type": "integer", "minimum": 0},
+    "threadId": {"type": "string", "minLength": 1},
+    "operationCode": {"type": "string", "minLength": 1},
+    "operationId": {"type": "string", "minLength": 1},
+    "parentOperationId": {"type": "string", "minLength": 1},
+    "statusCode": {"type": "string", "minLength": 1},
+    "reasonCode": {"type": "string", "minLength": 1},
+    "durationMilliseconds": {"type": "integer", "minimum": 0},
+    "target": {"type": "string"},
+    "title": {"type": "string"},
+    "selector": {"$ref": "#/$defs/selector"},
+    "queryEvidence": {"$ref": "#/$defs/queryEvidence"},
+    "collectionEvidence": {"$ref": "#/$defs/collectionEvidence"},
+    "source": {"$ref": "#/$defs/source"},
+    "privacy": {"$ref": "#/$defs/privacy"},
+    "attachments": {
+      "type": "array", "maxItems": 20,
+      "items": {"$ref": "#/$defs/attachmentReference"}
+    },
+    "performance": {"$ref": "#/$defs/performance"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["file", "line"],
+      "properties": {
+        "file": {"type": "string", "minLength": 1, "pattern": "^[^/\\\\]+$"},
+        "line": {"type": "integer", "minimum": 0},
+        "function": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "privacy": {
+      "type": "object",
+      "required": ["redacted", "ruleset"],
+      "properties": {
+        "redacted": {"const": true},
+        "ruleset": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "attachmentReference": {
+      "type": "object",
+      "required": ["id", "path", "mimeType", "kind", "truncated"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1, "pattern": "^[^/\\\\]+$"},
+        "mimeType": {"type": "string", "minLength": 1},
+        "kind": {"type": "string", "minLength": 1},
+        "truncated": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "performance": {
+      "type": "object",
+      "required": ["operationKey", "phasesMilliseconds"],
+      "properties": {
+        "operationKey": {"type": "string", "minLength": 1},
+        "phasesMilliseconds": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        },
+        "budgetMilliseconds": {"type": "integer", "minimum": 0},
+        "budgetStatus": {"type": "string", "enum": ["within_budget", "exceeded"]}
+      },
+      "additionalProperties": false
+    },
+    "selector": {
+      "type": "object",
+      "required": ["segments", "fingerprint", "fingerprintConfidence"],
+      "properties": {
+        "segments": {
+          "type": "array", "minItems": 1,
+          "items": {"$ref": "#/$defs/selectorSegment"}
+        },
+        "fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "fingerprintConfidence": {"type": "string", "enum": ["exact", "privacy_reduced"]}
+      },
+      "additionalProperties": false
+    },
+    "selectorSegment": {
+      "type": "object",
+      "required": ["elementType", "strategy", "isValueRedacted"],
+      "properties": {
+        "elementType": {"type": "string", "minLength": 1},
+        "strategy": {"type": "string", "enum": ["any", "identifier", "predicate", "text"]},
+        "value": {"type": "string"},
+        "valueLength": {"type": "integer", "minimum": 0},
+        "isValueRedacted": {"type": "boolean"},
+        "index": {"type": "integer"},
+        "selection": {"type": "string", "enum": ["first", "last", "index"]}
+      },
+      "additionalProperties": false
+    },
+    "queryEvidence": {
+      "type": "object",
+      "required": [
+        "expectedState", "initialState", "finalState", "evidenceLevel",
+        "candidateCollection", "matched", "reasonCode", "attempts",
+        "elapsedMilliseconds", "candidateCount", "candidates"
+      ],
+      "properties": {
+        "expectedState": {"type": "string", "minLength": 1},
+        "initialState": {"type": "string", "minLength": 1},
+        "finalState": {"type": "string", "minLength": 1},
+        "evidenceLevel": {"type": "string", "enum": ["basic", "detailed"]},
+        "candidateCollection": {"type": "string", "enum": ["omitted_by_policy", "bounded"]},
+        "matched": {"type": "boolean"},
+        "reasonCode": {"type": "string", "minLength": 1},
+        "attempts": {"type": "integer", "minimum": 1},
+        "elapsedMilliseconds": {"type": "integer", "minimum": 0},
+        "candidateCount": {"type": "integer", "minimum": 0},
+        "selectedIndex": {"type": "integer", "minimum": 0},
+        "failedSegmentIndex": {"type": "integer", "minimum": 0},
+        "ancestorState": {"type": "string", "minLength": 1},
+        "candidates": {
+          "type": "array", "maxItems": 5,
+          "items": {"$ref": "#/$defs/candidate"}
+        },
+        "observations": {
+          "type": "array", "maxItems": 50,
+          "items": {"$ref": "#/$defs/queryObservation"}
+        }
+      },
+      "allOf": [{
+        "if": {"properties": {"candidateCollection": {"const": "omitted_by_policy"}}},
+        "then": {"properties": {"candidates": {"maxItems": 0}}}
+      }],
+      "additionalProperties": false
+    },
+    "collectionEvidence": {
+      "type": "object",
+      "required": ["expectation", "matched", "attempts", "elapsedMilliseconds"],
+      "properties": {
+        "expectation": {"type": "string", "minLength": 1},
+        "expectedCount": {"type": "integer"},
+        "actualCount": {"type": "integer", "minimum": 0},
+        "matched": {"type": "boolean"},
+        "attempts": {"type": "integer", "minimum": 0},
+        "elapsedMilliseconds": {"type": "integer", "minimum": 0},
+        "selectedPosition": {"type": "string", "enum": ["first", "last", "index", "range"]},
+        "selectedIndex": {"type": "integer"},
+        "selectedIndices": {
+          "type": "array", "maxItems": 100,
+          "items": {"type": "integer"}
+        },
+        "displayedCount": {"type": "integer", "minimum": 0},
+        "failedIndices": {
+          "type": "array", "maxItems": 100,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "isContextAvailable": {"type": "boolean"},
+        "observations": {
+          "type": "array", "maxItems": 50,
+          "items": {"$ref": "#/$defs/collectionObservation"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "queryObservation": {
+      "type": "object",
+      "required": ["attempt", "elapsedMilliseconds", "state", "exists", "isHittable"],
+      "properties": {
+        "attempt": {"type": "integer", "minimum": 1},
+        "elapsedMilliseconds": {"type": "integer", "minimum": 0},
+        "state": {"type": "string", "enum": ["absent", "hidden", "visible", "hittable"]},
+        "exists": {"type": "boolean"},
+        "isHittable": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "collectionObservation": {
+      "type": "object",
+      "required": ["attempt", "elapsedMilliseconds", "count", "isContextAvailable"],
+      "properties": {
+        "attempt": {"type": "integer", "minimum": 1},
+        "elapsedMilliseconds": {"type": "integer", "minimum": 0},
+        "count": {"type": "integer", "minimum": 0},
+        "displayedCount": {"type": "integer", "minimum": 0},
+        "failedIndices": {
+          "type": "array", "maxItems": 100,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "isContextAvailable": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "relationship", "elementType", "identifier", "label", "labelLength",
+        "frame", "isEnabled", "isSelected", "isHittable"
+      ],
+      "properties": {
+        "relationship": {"type": "string", "enum": ["matched", "alternative"]},
+        "elementType": {"type": "string", "minLength": 1},
+        "identifier": {"type": "string"},
+        "label": {"type": "string"},
+        "labelLength": {"type": "integer", "minimum": 0},
+        "value": {"type": "string"},
+        "valueLength": {"type": "integer", "minimum": 0},
+        "frame": {"$ref": "#/$defs/frame"},
+        "isEnabled": {"type": "boolean"},
+        "isSelected": {"type": "boolean"},
+        "isHittable": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "frame": {
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": {"type": "number"}, "y": {"type": "number"},
+        "width": {"type": "number"}, "height": {"type": "number"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

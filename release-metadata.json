@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0.0",
+  "version": "0.1.0",
+  "minimumIOS": "15.0",
+  "xcode": "26.5",
+  "swift": "6.3.2",
+  "telemetrySchema": "1.0.0",
+  "distribution": "Swift Package Manager",
+  "apiBaseline": "api/XCEasy-0.1.0.swiftinterface"
+}

@@ -1,0 +1,34 @@
+{
+  "target": "XCEasy.framework",
+  "minimumLineCoverage": 0.70,
+  "criticalFiles": [
+    {
+      "name": "AllureIdentity.swift",
+      "minimumLineCoverage": 1.0
+    },
+    {
+      "name": "DiagnosticArtifactRegistry.swift",
+      "minimumLineCoverage": 1.0
+    },
+    {
+      "name": "SensitiveDataRedactor.swift",
+      "minimumLineCoverage": 1.0
+    },
+    {
+      "name": "XCEasyQueryAmbiguityDecision.swift",
+      "minimumLineCoverage": 1.0
+    },
+    {
+      "name": "XCEasyTestLifecycle.swift",
+      "minimumLineCoverage": 1.0
+    },
+    {
+      "name": "XCEasyUIElement+Search.swift",
+      "minimumLineCoverage": 0.85
+    },
+    {
+      "name": "XCEasyUIElement+Asserts.swift",
+      "minimumLineCoverage": 0.65
+    }
+  ]
+}

@@ -1,0 +1,1607 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "api_manager_send_request" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send [%@] request"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить [%@] запрос"
+          }
+        }
+      }
+    },
+    "api_manager_send_request_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Request failed with error: [ %@ ]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запрос не выполнен из-за ошибки: [ %@ ]"
+          }
+        }
+      }
+    },
+    "assert_contains_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! [%@] not contains [%@]!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! [%@] не содержит [%@]!"
+          }
+        }
+      }
+    },
+    "assert_contains_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking that [%@] contains [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что [%@] содержит [%@]"
+          }
+        }
+      }
+    },
+    "assert_element_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking element [%@] label is [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что лейбл элемента [%@] равен [%@]"
+          }
+        }
+      }
+    },
+    "assert_element_value" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking element [%@] value is [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение элемента [%@] равно [%@]"
+          }
+        }
+      }
+    },
+    "assert_equals_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Value [%@] is not equal to [%@]!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Значение [%@] не равно [%@]!"
+          }
+        }
+      }
+    },
+    "assert_equals_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking that the value of [%@] is equal to [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение [%@] равно [%@]"
+          }
+        }
+      }
+    },
+    "assert_false_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Value [%@] is true!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Значение [%@] истинно!"
+          }
+        }
+      }
+    },
+    "assert_false_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking the [%@] is false"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение [%@] ложно"
+          }
+        }
+      }
+    },
+    "assert_greater_than_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Error! Value [%@] is not greater than [%@]!" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Ошибка! Значение [%@] не больше [%@]!" } }
+      }
+    },
+    "assert_greater_than_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking if value [%@] is greater than [%@]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверка, что значение [%@] больше [%@]" } }
+      }
+    },
+    "assert_greater_or_equal_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Element [%@] is less than [%@]!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Элемент [%@] меньше [%@]!"
+          }
+        }
+      }
+    },
+    "assert_greater_or_equal_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if value [%@] is greater or equal to [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение [%@] больше или равно [%@]"
+          }
+        }
+      }
+    },
+    "assert_is_enabled_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enabled value of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значение включен ли элемент %@"
+          }
+        }
+      }
+    },
+    "assert_is_enabled_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is enabled"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] включен"
+          }
+        }
+      }
+    },
+    "assert_disappears_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verify that [%@] disappears" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить исчезновение [%@]" } }
+      }
+    },
+    "assert_is_hidden_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verify that [%@] is hidden" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что [%@] скрыт" } }
+      }
+    },
+    "assert_is_not_hittable_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verify that [%@] is not hittable" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что [%@] недоступен для нажатия" } }
+      }
+    },
+    "assert_is_not_displayed_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verify that [%@] is not displayed on screen" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что [%@] не отображается на экране" } }
+      }
+    },
+    "assert_is_displayed_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verify that [%@] is displayed on screen" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что [%@] отображается на экране" } }
+      }
+    },
+    "assert_is_exists_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existence of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Присутствие элемента %@"
+          }
+        }
+      }
+    },
+    "assert_is_exists_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking that element [%@] exists in the accessibility tree"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] присутствует в дереве элементов"
+          }
+        }
+      }
+    },
+    "assert_is_hittable_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hittable value of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значение кликабельности элемента %@"
+          }
+        }
+      }
+    },
+    "assert_is_hittable_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is hittable"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что на элемент [%@] можно тапнуть"
+          }
+        }
+      }
+    },
+    "assert_is_not_enabled_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non-enabled value of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значение выключен ли элемент %@"
+          }
+        }
+      }
+    },
+    "assert_is_not_enabled_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is not enabled"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] выключен"
+          }
+        }
+      }
+    },
+    "assert_is_not_exists_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non-existence of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отсутствие элемента %@"
+          }
+        }
+      }
+    },
+    "assert_is_not_exists_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking that element [%@] is absent from the accessibility tree"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] отсутствует в дереве элементов"
+          }
+        }
+      }
+    },
+    "assert_is_not_selected_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non-selected value of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значение выбора(выделения) элемента %@"
+          }
+        }
+      }
+    },
+    "assert_is_not_selected_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is not selected"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] не выбран"
+          }
+        }
+      }
+    },
+    "assert_is_selected_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected value of %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значение выбора(выделения) элемента %@"
+          }
+        }
+      }
+    },
+    "assert_is_selected_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is selected"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] выбран"
+          }
+        }
+      }
+    },
+    "assert_less_than_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Error! Value [%@] is not less than [%@]!" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Ошибка! Значение [%@] не меньше [%@]!" } }
+      }
+    },
+    "assert_less_than_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking if value [%@] is less than [%@]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверка, что значение [%@] меньше [%@]" } }
+      }
+    },
+    "assert_less_or_equal_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Element [%@] is greater than [%@]!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Элемент [%@] больше [%@]!"
+          }
+        }
+      }
+    },
+    "assert_less_or_equal_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if value [%@] is less or equal to [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение [%@] меньше или равно [%@]"
+          }
+        }
+      }
+    },
+    "assert_empty_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Error! Collection [%@] is not empty!" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Ошибка! Коллекция [%@] не пуста!" } }
+      }
+    },
+    "assert_empty_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking that collection [%@] is empty" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверка, что коллекция [%@] пуста" } }
+      }
+    },
+    "assert_nil_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Element [%@] is not nil!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Элемент [%@] не пустой!"
+          }
+        }
+      }
+    },
+    "assert_nil_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is nil"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] пустой"
+          }
+        }
+      }
+    },
+    "assert_not_contains_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! [%@] contains [%@]!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! [%@] содержит [%@]!"
+          }
+        }
+      }
+    },
+    "assert_not_contains_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking that [%@] not contains [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что [%@] не содержит [%@]"
+          }
+        }
+      }
+    },
+    "assert_not_equals_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Value [%@] is equal to [%@]!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Значение [%@] равно [%@]!"
+          }
+        }
+      }
+    },
+    "assert_not_equals_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking that the value of [%@] is not equal to [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение [%@] не равно [%@]"
+          }
+        }
+      }
+    },
+    "assert_not_empty_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Error! Collection [%@] is empty!" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Ошибка! Коллекция [%@] пуста!" } }
+      }
+    },
+    "assert_not_empty_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking that collection [%@] is not empty" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверка, что коллекция [%@] не пуста" } }
+      }
+    },
+    "assert_not_nil_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Element [%@] is nil!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Элемент [%@] пустой!"
+          }
+        }
+      }
+    },
+    "assert_not_nil_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking if element [%@] is not nil"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что элемент [%@] не пустой"
+          }
+        }
+      }
+    },
+    "assert_true_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error! Value [%@] is false!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка! Значение [%@] ложно!"
+          }
+        }
+      }
+    },
+    "assert_true_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking the [%@] is true"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверка, что значение [%@] истинно"
+          }
+        }
+      }
+    },
+    "assert_throws_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Error! Operation [%@] did not throw an error!" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Ошибка! Операция [%@] не выбросила ошибку!" } }
+      }
+    },
+    "assert_throws_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking that operation [%@] throws an error" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверка, что операция [%@] выбрасывает ошибку" } }
+      }
+    },
+    "assert_does_not_throw_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Error! Operation [%@] threw an error!" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Ошибка! Операция [%@] выбросила ошибку!" } }
+      }
+    },
+    "assert_does_not_throw_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Checking that operation [%@] does not throw" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверка, что операция [%@] не выбрасывает ошибку" } }
+      }
+    },
+    "asserts_default_element_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Element"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Элемент"
+          }
+        }
+      }
+    },
+    "clear_text_field" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear text field"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистить поле ввода"
+          }
+        }
+      }
+    },
+    "close_application_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close Application"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть приложение"
+          }
+        }
+      }
+    },
+    "device_orientation_face_down" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face down"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лицом вниз"
+          }
+        }
+      }
+    },
+    "device_orientation_face_up" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face up"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лицом вверх"
+          }
+        }
+      }
+    },
+    "device_orientation_landscape_left" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Landscape left"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Горизонтально слева"
+          }
+        }
+      }
+    },
+    "device_orientation_landscape_right" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Landscape right"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Горизонтально справа"
+          }
+        }
+      }
+    },
+    "device_orientation_portrait" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portrait"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вертикально"
+          }
+        }
+      }
+    },
+    "device_orientation_portrait_upside_down" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portrait upside down"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вертикально вверх ногами"
+          }
+        }
+      }
+    },
+    "device_orientation_unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неизвестно"
+          }
+        }
+      }
+    },
+    "double_tap_on_element_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double tap on element [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Двойное нажатие на элемент[%@]"
+          }
+        }
+      }
+    },
+    "down_direction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Down"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вниз"
+          }
+        }
+      }
+    },
+    "get_clipboard_value" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get value from clipboard"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Получить значение из буфера обмена"
+          }
+        }
+      }
+    },
+    "launch_application_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Launch Application"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запустить приложение"
+          }
+        }
+      }
+    },
+    "left_direction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Left"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Влево"
+          }
+        }
+      }
+    },
+    "open_deeplink_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open deeplink [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть диплинк [%@]"
+          }
+        }
+      }
+    },
+    "press_on_element_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press element [%@] for duration [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зажимать элемент [%@] в течение [%@]"
+          }
+        }
+      }
+    },
+    "reopen_application_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reopen Application"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переоткрыть приложение"
+          }
+        }
+      }
+    },
+    "right_direction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "right"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вправо"
+          }
+        }
+      }
+    },
+    "screen_position_bottom_center" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottom center"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снизу по центру"
+          }
+        }
+      }
+    },
+    "screen_position_center" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Center"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По центру"
+          }
+        }
+      }
+    },
+    "screen_position_left_bottom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Left bottom"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слева внизу"
+          }
+        }
+      }
+    },
+    "screen_position_left_center" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Left center"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cлева по центру"
+          }
+        }
+      }
+    },
+    "screen_position_left_top" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Left top"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Слева сверху"
+          }
+        }
+      }
+    },
+    "screen_position_right_bottom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Right bottom"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Справа снизу"
+          }
+        }
+      }
+    },
+    "screen_position_right_center" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Right center"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Справа по центру"
+          }
+        }
+      }
+    },
+    "screen_position_right_top" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Right top"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Справа сверху"
+          }
+        }
+      }
+    },
+    "screen_position_top_center" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top center"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сверху по центру"
+          }
+        }
+      }
+    },
+    "screen_press_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Press and hold the screen at [%@] for [%@] seconds"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зажимать экран в точке [%@] в течение [%@] секунд"
+          }
+        }
+      }
+    },
+    "screen_swipe_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe from [%@] to [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сделать свайп из точки [%@] до точки [%@]"
+          }
+        }
+      }
+    },
+    "screen_tap_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap the [%@] on the screen"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажать на точку [%@] на экране"
+          }
+        }
+      }
+    },
+    "set_launch_arguments_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set LaunchArguments"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установка LaunchArguments"
+          }
+        }
+      }
+    },
+    "set_launch_environment_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set LaunchEnvironment"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установка LaunchEnvironment"
+          }
+        }
+      }
+    },
+    "set_orientation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set orientation [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установить ориентацию [%@]"
+          }
+        }
+      }
+    },
+    "swipe_element_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe [%@] element [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свайпнуть [%@] элемент [%@]"
+          }
+        }
+      }
+    },
+    "element_value_missing_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Element [%@] has no value to clear"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У элемента [%@] нет значения для очистки"
+          }
+        }
+      }
+    },
+    "tap_on_element_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap on element [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажать на элемент [%@]"
+          }
+        }
+      }
+    },
+    "ui_action_not_ready_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Element [%@] did not satisfy action policy [%@] within [%@] seconds"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Элемент [%@] не достиг состояния для политики действия [%@] за [%@] секунд"
+          }
+        }
+      }
+    },
+    "type_text_to_element_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter text into [%@]"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ввести текст в [%@]"
+          }
+        }
+      }
+    },
+    "up_direction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Up"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вверх"
+          }
+        }
+      }
+    },
+    "wait_for_seconds" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wait for [%@] seconds"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ожидать в течение [%@] секунд"
+          }
+        }
+      }
+    },
+    "component_collection_assert_all_displayed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Check that all current components are displayed" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что все текущие компоненты отображаются" } }
+      }
+    },
+    "component_collection_assert_count_at_least" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Check that component count is at least [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что компонентов не меньше [%lld]" } }
+      }
+    },
+    "component_collection_assert_count_at_most" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Check that component count is at most [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что компонентов не больше [%lld]" } }
+      }
+    },
+    "component_collection_assert_count_exact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Check that component count equals [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что количество компонентов равно [%lld]" } }
+      }
+    },
+    "component_collection_assert_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Check that the component collection is empty" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что коллекция компонентов пуста" } }
+      }
+    },
+    "component_collection_assert_not_empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Check that the component collection is not empty" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Проверить, что коллекция компонентов не пуста" } }
+      }
+    },
+    "component_collection_assertion_failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "%@. Actual component count: [%lld]." } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "%@. Фактическое количество компонентов: [%lld]." } }
+      }
+    },
+    "component_collection_select_first" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create locator for the first component" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Создать локатор первого компонента" } }
+      }
+    },
+    "component_collection_select_index" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create locator for component at index [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Создать локатор компонента с индексом [%lld]" } }
+      }
+    },
+    "component_collection_select_last" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create locator for the last component" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Создать локатор последнего компонента" } }
+      }
+    },
+    "component_collection_select_range" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create component locators for indices [%lld]..<[%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Создать локаторы компонентов для индексов [%lld]..<[%lld]" } }
+      }
+    },
+    "component_collection_wait_all_displayed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Wait until all current components are displayed" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Дождаться отображения всех текущих компонентов" } }
+      }
+    },
+    "component_collection_wait_count_at_least" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Wait until component count is at least [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Дождаться, когда компонентов будет не меньше [%lld]" } }
+      }
+    },
+    "component_collection_wait_count_at_most" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Wait until component count is at most [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Дождаться, когда компонентов будет не больше [%lld]" } }
+      }
+    },
+    "component_collection_wait_count_exact" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Wait until component count equals [%lld]" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Дождаться количества компонентов [%lld]" } }
+      }
+    },
+    "xceasy_allure_config_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set XCEasyAllureConfig"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Параметры XCEasyAllureConfig"
+          }
+        }
+      }
+    },
+    "xceasy_basic_config_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set XCEasyConfig"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Параметры XCEasyConfig"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
