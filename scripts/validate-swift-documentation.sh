@@ -16,25 +16,48 @@ for source_root in "$@"; do
     }
 done
 
-legacy_header_found=false
-for header_root in "$repository_root" "$@"; do
-    if rg -n \
-        'Created by|Created on|^//  .+\.(swift|m|h)$' \
-        "$header_root" \
-        --glob '*.swift' \
-        --glob '*.m' \
-        --glob '*.h' \
-        --glob '!Derived/**' \
-        --glob '!**/.build/**' \
-        --glob '!**/*.xcodeproj/**'
-    then
-        legacy_header_found=true
-    fi
-done
-if [ "$legacy_header_found" = true ]; then
-    echo "Legacy author/date/file banner found in hand-written code." >&2
-    exit 1
-fi
+perl - "$repository_root" "$@" <<'PERL'
+use strict;
+use warnings;
+use File::Find;
+
+my @matches;
+for my $root (@ARGV) {
+    find(
+        {
+            no_chdir => 1,
+            preprocess => sub {
+                return grep {
+                    $_ ne 'Derived' &&
+                    $_ ne '.build' &&
+                    $_ !~ /\.xcodeproj\z/
+                } @_;
+            },
+            wanted => sub {
+                return unless -f && /\.(?:swift|m|h)\z/;
+                open my $handle, '<', $File::Find::name
+                    or die "Cannot read $File::Find::name: $!\n";
+                my $line_number = 0;
+                while (my $line = <$handle>) {
+                    $line_number++;
+                    if ($line =~ /Created by|Created on|^\/\/  .+\.(?:swift|m|h)$/) {
+                        chomp $line;
+                        push @matches, "$File::Find::name:$line_number:$line";
+                    }
+                }
+                close $handle;
+            }
+        },
+        $root
+    );
+}
+
+if (@matches) {
+    print STDERR join("\n", @matches), "\n";
+    print STDERR "Legacy author/date/file banner found in hand-written code.\n";
+    exit 1;
+}
+PERL
 
 perl - "$@" <<'PERL'
 use strict;

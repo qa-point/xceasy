@@ -17,6 +17,9 @@ struct Documented {
 SWIFT
 "$validator" "$fixture_root" >/dev/null
 
+# GitHub macOS runners do not guarantee Homebrew tools such as ripgrep.
+PATH=/usr/bin:/bin "$validator" "$fixture_root" >/dev/null
+
 cat >"$fixture_root/Undocumented.swift" <<'SWIFT'
 struct Undocumented {
     func value() {}
