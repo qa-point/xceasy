@@ -74,17 +74,19 @@ internal struct XCEasyLocatorDescriptor: Codable, Equatable {
         }
 
         fileprivate var canonicalValue: String {
-            [
+            let values: [String] = [
                 elementType,
                 strategy.rawValue,
                 value ?? "",
-                valueLength.map { String($0) } ?? "",
+                valueLength.map(String.init) ?? "",
                 String(isValueRedacted),
-                index.map { String($0) } ?? "",
+                index.map(String.init) ?? "",
                 selection ?? ""
             ]
-                .map { "\($0.utf8.count):\($0)" }
-                .joined(separator: "|")
+            let lengthPrefixedValues = values.map { value in
+                "\(value.utf8.count):\(value)"
+            }
+            return lengthPrefixedValues.joined(separator: "|")
         }
     }
 
