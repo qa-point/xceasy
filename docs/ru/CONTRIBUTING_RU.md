@@ -26,7 +26,7 @@
 
 ## 4. Проверки
 
-Закреплённая точка входа для local/CI проверки:
+Точка входа для полной локальной проверки:
 
 ```bash
 mise install
@@ -34,6 +34,8 @@ mise install
 ```
 
 Для узкой итерации вместо `all` используйте `contracts`, `package`, `unit`, `race`, `fixture` или `release`. После instrumented unit и fixture runs режим `coverage` повторно проверяет их существующие `.xcresult` bundles. Версии toolchain заданы в `.mise.toml` и `xceasy.toolchain.json`, CI — в `.github/workflows/ci.yml`. Режим contracts проверяет shell fixtures, provider boundaries, rejection paths coverage policy, crash reconciliation, cross-run performance, controlled healing, schemas, manifests, Allure, ссылки в документации, RU/EN-паритет, Swift DocC и legacy banners. Package выполняет isolated iOS Simulator build. Race запускает shared execution, soft-assertion, diagnostic и core suites под Thread Sanitizer. Release пересобирает distributable Swift interface и сравнивает его с текущим SemVer baseline. Unit/fixture используют pinned Tuist и coverage; coverage объединяет оба result bundles и применяет `scripts/coverage-policy.json`.
+
+Hosted GitHub CI запускает `./scripts/check.sh ci`: SwiftLint, contracts, isolated package build, unit-тесты framework и release contract. Race, integration/UI fixture и aggregate coverage остаются в локальном `all` и не выполняются на hosted runners.
 
 Нельзя заявлять успешный прогон, если команда не запускалась. Укажите конкретную причину: отсутствует Xcode, simulator, dependency/network либо воспроизводимая ошибка кода.
 

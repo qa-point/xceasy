@@ -2,7 +2,7 @@
 
 ## 1. Baseline
 
-Follow Swift API Design Guidelines and the existing project structure. This document defines binding local rules. Until SwiftFormat/SwiftLint are introduced, review enforces formatting. Once added, their config files become executable sources of truth without overriding the constitution.
+Follow Swift API Design Guidelines and the existing project structure. This document defines binding local rules. SwiftLint is pinned in `mise.toml`; `.swiftlint.yml` is the executable source of truth without overriding the constitution.
 
 ## 2. Formatting and files
 

@@ -103,7 +103,7 @@ extension XCEasyTestObserver {
     public func testSuiteWillStart(_ testSuite: XCTestSuite) {
         logger.log("* Test Suite starting: [ \(testSuite.name) ]")
         let testSuiteName = allureFormatter.formatTestSuiteName(testSuite: testSuite)
-        if testSuiteName != "" {
+        if !testSuiteName.isEmpty {
             XCEasyTestContext.shared.testSuite = testSuiteName
         }
     }

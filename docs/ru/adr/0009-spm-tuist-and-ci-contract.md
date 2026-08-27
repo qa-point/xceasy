@@ -6,7 +6,7 @@
 
 Swift Package Manager является primary consumer distribution manifest. Tuist остаётся механизмом project generation и local development. Tuist 4.203.3, Xcode 26.5/Swift 6.3.2, minimum iOS 15 и tested simulator runtime iOS 26.5 зафиксированы в `xceasy.toolchain.json` и `.mise.toml`.
 
-`scripts/check.sh all` — локальный CI-parity entry point. GitHub Actions выполняет contract/schema/redaction/parallel checks, public Swift-interface compatibility, все unit-тесты framework, каждый SwiftUI/UIKit sample test и aggregate coverage gate для `XCEasy.framework`. CI загружает raw XCTest и machine-readable coverage evidence. `release-metadata.json.version` является единым источником версии; `CHANGELOG.md`, остальные release metadata и versioned `.swiftinterface` формируют release baseline. Generated workspaces, Derived data, IDE metadata и result bundles игнорируются.
+`scripts/check.sh all` — точка входа для полного local acceptance. Hosted GitHub Actions использует `scripts/check.sh ci` для SwiftLint, contracts, isolated package build, unit-тестов framework и проверки public Swift-interface compatibility. UI fixtures, race checks и aggregate coverage остаются в local acceptance, потому что UI-прогоны на hosted simulators сравнительно дороги и нестабильны. `release-metadata.json.version` является единым источником версии; `CHANGELOG.md`, остальные release metadata и versioned `.swiftinterface` формируют release baseline. Generated workspaces, Derived data, IDE metadata и result bundles игнорируются.
 
 ## Последствия
 

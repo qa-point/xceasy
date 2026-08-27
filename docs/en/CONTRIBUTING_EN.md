@@ -26,7 +26,7 @@ Read the constitution, technical guide, and code style. Inspect the dirty worktr
 
 ## 4. Verification
 
-The pinned local/CI entry point is:
+The complete local verification entry point is:
 
 ```bash
 mise install
@@ -34,6 +34,8 @@ mise install
 ```
 
 Use `contracts`, `package`, `unit`, `race`, `fixture`, or `release` instead of `all` for a narrow iteration. After instrumented unit and fixture runs, `coverage` re-evaluates their existing `.xcresult` bundles. Toolchain versions are defined by `.mise.toml` and `xceasy.toolchain.json`; CI is defined by `.github/workflows/ci.yml`. Contract mode validates shell fixtures, provider boundaries, coverage-policy rejection paths, crash reconciliation, cross-run performance, controlled healing, schemas, manifests, Allure, documentation links, RU/EN parity, Swift DocC coverage, and legacy banners. Package mode performs an isolated iOS Simulator build. Race mode runs the shared execution, soft-assertion, diagnostic, and core suites under Thread Sanitizer. Release mode rebuilds the distributable Swift interface and compares it with the current SemVer baseline. Unit and fixture modes generate projects with pinned Tuist and coverage; coverage mode merges both result bundles and applies `scripts/coverage-policy.json`.
+
+Hosted GitHub CI runs `./scripts/check.sh ci`: SwiftLint, contracts, the isolated package build, framework unit tests, and the release contract. Race, integration/UI fixture, and aggregate coverage remain part of `all` for local acceptance and are not executed on hosted runners.
 
 Never claim a successful run when the command did not execute. Report the exact blocker: missing Xcode, simulator, dependency/network access, or a reproducible code failure.
 

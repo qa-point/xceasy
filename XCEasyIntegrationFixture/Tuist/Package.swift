@@ -9,6 +9,7 @@ let packageSettings = PackageSettings(
         "Alamofire": .framework
     ]
 )
+
 #endif
 
 let package = Package(

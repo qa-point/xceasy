@@ -78,7 +78,6 @@ class XCEasyTests: XCEasyTestCase {
         tms("TR-222")
         id("12334412")
 
-
         step("1 step") {
 
             let element = find(identifier: "failedID")

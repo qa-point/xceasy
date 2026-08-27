@@ -2,8 +2,8 @@
 set -eu
 
 mode=${1:-all}
-case "$mode" in contracts|package|unit|race|fixture|coverage|release|all) ;; *)
-    echo "Usage: $0 [contracts|package|unit|race|fixture|coverage|release|all]" >&2
+case "$mode" in ci|contracts|package|unit|race|fixture|coverage|release|all) ;; *)
+    echo "Usage: $0 [ci|contracts|package|unit|race|fixture|coverage|release|all]" >&2
     exit 64
 esac
 
@@ -16,6 +16,7 @@ unit_result_bundle=${XC_EASY_UNIT_RESULT_BUNDLE:-/private/tmp/xceasy-unit-$$.xcr
 fixture_result_bundle=${XC_EASY_FIXTURE_RESULT_BUNDLE:-/private/tmp/xceasy-fixture-$$.xcresult}
 
 run_contracts() {
+    "$repository_root/scripts/lint-swift.sh"
     "$repository_root/scripts/validate-docs.sh"
     "$repository_root/scripts/validate-swift-documentation.sh"
     for test_script in "$repository_root"/scripts/tests/test-*.sh; do
@@ -122,6 +123,7 @@ run_release() {
 }
 
 case "$mode" in
+    ci) run_contracts; run_package; run_unit; run_release ;;
     contracts) run_contracts ;;
     package) run_package ;;
     unit) run_unit ;;

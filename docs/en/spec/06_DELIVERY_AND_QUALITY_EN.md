@@ -11,14 +11,14 @@ Make XCEasy reproducibly buildable, consumable, and verifiable by humans, CI, an
 - Tuist defines framework/unit/UI targets, iOS 15, and the Alamofire package.
 - `Package.swift` is the primary source-consumer manifest; Tuist remains the project generator. The Objective-C observer bootstrap is a separate SPM target.
 - `xceasy.toolchain.json` and `.mise.toml` pin Tuist 4.203.3 and record Xcode 26.5, Swift 6.3.2, iOS 15 minimum, and iOS 26.5 simulator verification.
-- `scripts/check.sh all` is the CI-parity entry point. GitHub Actions runs contracts, schema/redaction/parallel checks, an iOS Swift Package consumer build, framework unit tests, the internal SwiftUI/UIKit integration fixture, and the aggregate [F13 coverage policy](13_TEST_COVERAGE_EN.md).
+- `scripts/check.sh all` is the complete local acceptance entry point. Hosted GitHub Actions runs SwiftLint, contracts, an iOS Swift Package consumer build, framework unit tests, and the release contract through `scripts/check.sh ci`. The internal SwiftUI/UIKit fixture, race checks, and aggregate [F13 coverage policy](13_TEST_COVERAGE_EN.md) remain local acceptance gates.
 - Generated workspaces, Derived output, IDE state, and result bundles are ignored. `release-metadata.json.version` is the single version source; `CHANGELOG.md` and the versioned distributable Swift-interface baseline define the remaining `0.1.0` release contract. `scripts/check.sh release` rebuilds the interface with library evolution enabled and rejects removed or changed baseline API lines while allowing additions.
 
 ## Requirements
 
 - `F06-REQ-001`: a machine-readable manifest pins Tuist, Swift, Xcode, and the supported iOS/simulator matrix.
-- `F06-REQ-002`: one documented command reproduces CI checks locally.
-- `F06-REQ-003`: CI runs format/lint, unit, integration/UI, schema/golden, redaction, and parallel tests.
+- `F06-REQ-002`: one documented command reproduces hosted CI checks locally, and one command runs complete local acceptance.
+- `F06-REQ-003`: hosted CI runs lint, unit, schema/golden, redaction, and contract tests; integration/UI and race checks run in local acceptance.
 - `F06-REQ-004`: the distribution contract (SPM/Tuist/XCFramework) is versioned and tested by a consumer fixture.
 - `F06-REQ-005`: generated-artifact policy and `.gitignore` exclude user/machine-specific output.
 - `F06-REQ-006`: the internal integration fixture builds, uses relative/temporary report paths, and covers success/failure/parallel/AI-diagnostic scenarios; public UIKit and SwiftUI examples are released from the separate `xceasy-examples` repository.
@@ -26,7 +26,7 @@ Make XCEasy reproducibly buildable, consumable, and verifiable by humans, CI, an
 - `F06-REQ-008`: public API compatibility is checked automatically.
 - `F06-REQ-009`: dependency updates require license/security/maintenance review.
 - `F06-REQ-010`: CI validates RU/EN documentation links and examples.
-- `F06-REQ-011`: CI enforces the versioned aggregate and critical-file coverage policy and publishes machine-readable evidence.
+- `F06-REQ-011`: local acceptance enforces the versioned aggregate and critical-file coverage policy and produces machine-readable evidence.
 
 ## Acceptance criteria
 
