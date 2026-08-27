@@ -1,6 +1,6 @@
 # F03 — Assertions and steps
 
-0.1.0 status: implemented and verified.
+0.1.1 status: implemented and verified.
 
 ## Goal
 

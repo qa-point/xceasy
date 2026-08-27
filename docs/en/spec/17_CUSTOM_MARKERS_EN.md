@@ -1,6 +1,6 @@
 # F17 — Custom markers
 
-0.1.0 status: implemented as public metadata for XCTest, Allure, diagnostics, and the build-time manifest.
+0.1.1 status: implemented as public metadata for XCTest, Allure, diagnostics, and the build-time manifest.
 
 ## Goal
 

@@ -1,12 +1,12 @@
 # XCEasy Specification
 
-Status: active versioned contract 0.1.0. Reconciled with source: August 13, 2026.
+Status: active versioned contract 0.1.1. Reconciled with source: August 27, 2026.
 
 The specification is split by feature. Each status explicitly separates production behavior from partially implemented or planned requirements.
 
 ## Feature map
 
-| ID | Feature | 0.1.0 status | Components |
+| ID | Feature | 0.1.1 status | Components |
 |---|---|---|---|
 | F01 | [Lifecycle and test context](01_LIFECYCLE_AND_CONTEXT_EN.md) | Implemented and verified | test case, app, observer, context |
 | F02 | [UI elements and interaction](02_UI_INTERACTION_EN.md) | Implemented and verified | lazy lookup, actions, Device |

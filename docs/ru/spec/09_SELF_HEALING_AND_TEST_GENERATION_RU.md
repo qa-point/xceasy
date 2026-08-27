@@ -1,6 +1,6 @@
 # F09 — Self-healing и генерация тестов
 
-Статус 0.1.0: controlled selector-healing workflow реализован; full generated-test acceptance остаётся открытым.
+Статус 0.1.1: controlled selector-healing workflow реализован; full generated-test acceptance остаётся открытым.
 
 ## Цель
 

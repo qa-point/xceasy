@@ -2,7 +2,7 @@
 
 English · [Русский](../ru/TECHNICAL_GUIDE_RU.md) · [README](../../README.md)
 
-This document describes the actual architecture and production contract of XCEasy 0.1.0. Feature requirements live in the [specifications](spec/README_EN.md), and accepted decisions live under [`adr/`](adr/).
+This document describes the actual architecture and production contract of XCEasy 0.1.1. Feature requirements live in the [specifications](spec/README_EN.md), and accepted decisions live under [`adr/`](adr/).
 
 ## 1. Supported environment
 
@@ -11,7 +11,7 @@ This document describes the actual architecture and production contract of XCEas
 | Distribution | Swift Package Manager; Tuist is used only for repository development. |
 | Deployment target | iOS 15.0. |
 | Package manifest | Swift tools 5.9, Swift 5 language mode. |
-| Verified toolchain matrix | Xcode 26.5, Swift 6.3.2, iOS 26.5 simulator runtime. |
+| Verified toolchain matrix | Xcode 26.6, Swift 6.3.3, iOS 26.5 simulator runtime. |
 | Dependency | Alamofire 5.10.x (`upToNextMajor`). |
 
 Xcode 15/Swift 5.9 is the manifest's technical minimum, but only the matrix in `xceasy.toolchain.json` that passed CI is supported.
@@ -38,28 +38,15 @@ The framework remains one product target. Types and protocols enforce boundaries
 
 ## 3. Runtime architecture
 
-```text
-+----------------------+       +-----------------------------+
-| XCTest / Page Object |------>| XCEasyTestCase              |
-+----------+-----------+       | config + app lifecycle      |
-           |                   +--------------+--------------+
-           v                                  |
-+----------------------+                      v
-| lazy find / child    |       +-----------------------------+
-| locator chain        |------>| current accessibility tree  |
-+----------+-----------+       +-----------------------------+
-           | action / read / assertion
-           v
-+----------------------+       +-----------------------------+
-| operation lifecycle  |------>| Allure steps/results        |
-| code + correlation   |       | log + JSONL + diagnostics   |
-+----------+-----------+       +-----------------------------+
-           |
-           v
-+----------------------+
-| per-test artifacts   |
-| execution isolation  |
-+----------------------+
+```mermaid
+flowchart TD
+    TEST["XCTest / Page Object"] --> CASE["XCEasyTestCase<br/>config + app lifecycle"]
+    TEST --> LOCATOR["lazy find / child<br/>locator chain"]
+    CASE --> TREE["current accessibility tree"]
+    LOCATOR --> TREE
+    LOCATOR -->|"action / read / assertion"| OPERATION["operation lifecycle<br/>code + correlation"]
+    OPERATION --> EVIDENCE["Allure steps/results<br/>log + JSONL + diagnostics"]
+    OPERATION --> ARTIFACTS["per-test artifacts<br/>execution isolation"]
 ```
 
 `XCEasyTestContext` owns one test execution. Lock-protected and task-local boundaries preserve context through structured concurrency and prevent parallel tests from mixing configuration, application, steps, logs, or attachments.

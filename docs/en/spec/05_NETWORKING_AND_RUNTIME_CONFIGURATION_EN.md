@@ -1,6 +1,6 @@
 # F05 — Networking and runtime configuration
 
-0.1.0 status: runtime API is implemented; `F05-REQ-002` and complete cancellation/error taxonomy remain open.
+0.1.1 status: runtime API is implemented; `F05-REQ-002` and complete cancellation/error taxonomy remain open.
 
 ## Goal
 

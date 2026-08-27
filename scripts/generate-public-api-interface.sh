@@ -8,22 +8,14 @@ fi
 
 output=$1
 repository_root=$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)
-developer_dir=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}
+. "$repository_root/scripts/lib/environment.sh"
+resolve_xcode_developer_dir
+developer_dir=$DEVELOPER_DIR
 derived_data=$(mktemp -d "${TMPDIR:-/tmp}/xceasy-api-derived.XXXXXX")
 trap 'rm -rf "$derived_data"' EXIT
 
 if [ ! -d "$repository_root/XCEasy.xcworkspace" ]; then
-    if [ -n "${TUIST_BIN:-}" ] && [ -x "$TUIST_BIN" ]; then
-        tuist_bin=$TUIST_BIN
-    elif command -v tuist >/dev/null 2>&1; then
-        tuist_bin=$(command -v tuist)
-    elif [ -x "$HOME/.local/share/mise/installs/tuist/4.203.3/tuist" ]; then
-        tuist_bin="$HOME/.local/share/mise/installs/tuist/4.203.3/tuist"
-    else
-        echo "Tuist 4.203.3 is unavailable; run 'mise install'" >&2
-        exit 69
-    fi
-    (cd "$repository_root" && DEVELOPER_DIR="$developer_dir" "$tuist_bin" generate --no-open)
+    (cd "$repository_root" && run_tuist generate --no-open)
 fi
 
 (cd "$repository_root" && DEVELOPER_DIR="$developer_dir" xcodebuild -quiet build \

@@ -1,6 +1,6 @@
 # F10 — Performance telemetry и оптимизация
 
-Статус 0.1.0: per-test сбор и budgets реализованы; cross-run comparison реализован независимым runner, а project thresholds задаёт пользователь/CI.
+Статус 0.1.1: per-test сбор и budgets реализованы; cross-run comparison реализован независимым runner, а project thresholds задаёт пользователь/CI.
 
 ## Цель
 

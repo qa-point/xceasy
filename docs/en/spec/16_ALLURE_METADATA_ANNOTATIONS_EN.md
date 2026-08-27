@@ -1,6 +1,6 @@
 # F16 — Allure metadata annotations
 
-0.1.0 status: implemented. Compile-time annotations and parameter metadata are resolved before `setUp`; runtime alternatives remain supported.
+0.1.1 status: implemented. Compile-time annotations and parameter metadata are resolved before `setUp`; runtime alternatives remain supported.
 
 ## Goal
 

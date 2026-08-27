@@ -1,6 +1,6 @@
 # F14 — Параметризованные test executions
 
-Статус 0.1.0: реализовано для типизированных inline datasets через `@ParameterizedTest`; внешние runtime datasets остаются вне scope.
+Статус 0.1.1: реализовано для типизированных inline datasets через `@ParameterizedTest`; внешние runtime datasets остаются вне scope.
 
 ## Цель
 

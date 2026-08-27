@@ -1,6 +1,6 @@
 # F06 — Delivery и quality
 
-Статус 0.1.0: repository release contract реализован; подпись и публикация требуют maintainer authority.
+Статус 0.1.1: repository release contract реализован; подпись и публикация требуют maintainer authority.
 
 ## Цель
 
@@ -10,9 +10,9 @@
 
 - Tuist описывает framework/unit/UI targets, iOS 15 и Alamofire package.
 - `Package.swift` является primary source-consumer manifest; Tuist остаётся project generator. Objective-C observer bootstrap вынесен в отдельный SPM target.
-- `xceasy.toolchain.json` и `.mise.toml` фиксируют Tuist 4.203.3 и Xcode 26.5, Swift 6.3.2, minimum iOS 15, simulator iOS 26.5.
+- `xceasy.toolchain.json` и `.mise.toml` фиксируют Tuist 4.203.3 и Xcode 26.6, Swift 6.3.3, minimum iOS 15, simulator iOS 26.5.
 - `scripts/check.sh all` — точка входа для полного локального acceptance. Hosted GitHub Actions через `scripts/check.sh ci` запускает SwiftLint, contracts, iOS Swift Package consumer build, unit tests framework и release contract. Внутренний SwiftUI/UIKit fixture, race checks и aggregate [F13 coverage policy](13_TEST_COVERAGE_RU.md) остаются локальными acceptance gates.
-- Generated workspaces, Derived output, IDE state и result bundles игнорируются. `release-metadata.json.version` является единым источником версии; `CHANGELOG.md` и versioned distributable Swift-interface baseline задают остальные части release-контракта `0.1.0`. `scripts/check.sh release` пересобирает interface с library evolution и отклоняет удалённые или изменённые baseline API lines, разрешая additions.
+- Generated workspaces, Derived output, IDE state и result bundles игнорируются. `release-metadata.json.version` является единым источником версии; `CHANGELOG.md` и versioned distributable Swift-interface baseline задают остальные части release-контракта `0.1.1`. `scripts/check.sh release` пересобирает interface с library evolution и отклоняет удалённые или изменённые baseline API lines, разрешая additions.
 
 ## Требования
 
@@ -38,7 +38,7 @@
 ## Решения и оставшиеся вопросы
 
 - `F06-DEC-001`: source SPM является primary consumer channel; pinned Tuist — project generator репозитория.
-- `F06-DEC-002`: текущая matrix — Xcode 26.5/Swift 6.3.2, iOS 15 minimum, iOS 26.5 tested simulator; изменения требуют ADR/migration.
+- `F06-DEC-002`: текущая matrix — Xcode 26.6/Swift 6.3.3, iOS 15 minimum, iOS 26.5 tested simulator; изменения требуют ADR/migration.
 - `F06-DEC-003`: generated projects/workspaces, Derived output, user state и result bundles не коммитятся.
 - `F06-DEC-004`: SemVer, changelog, release metadata и automated source-compatibility checks обязательны для release.
 - `F06-DEC-005`: tag `v<version>` запускает полный release-readiness workflow и создаёт source archive с checksum; публикация или подпись всё ещё требует authority maintainer.

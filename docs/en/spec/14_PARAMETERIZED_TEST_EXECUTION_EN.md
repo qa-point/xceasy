@@ -1,6 +1,6 @@
 # F14 — Parameterized test executions
 
-0.1.0 status: implemented for typed inline datasets through `@ParameterizedTest`; external runtime datasets remain out of scope.
+0.1.1 status: implemented for typed inline datasets through `@ParameterizedTest`; external runtime datasets remain out of scope.
 
 ## Goal
 

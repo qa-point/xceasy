@@ -1,6 +1,6 @@
 # F12 — Reusable UI components and POM
 
-0.1.0 status: implemented and verified, including indexed collections and component-aware steps.
+0.1.1 status: implemented and verified, including indexed collections and component-aware steps.
 
 ## Goal
 
@@ -10,12 +10,12 @@ Users model interfaces with reusable component Page Objects. One component must 
 
 A banner is not a set of independent global selectors; it is a component:
 
-```text
-BannerComponent
-└── element
-    ├── title
-    ├── subtitle
-    └── closeButton
+```mermaid
+flowchart TD
+    COMPONENT["BannerComponent"] --> ELEMENT["element"]
+    ELEMENT --> TITLE["title"]
+    ELEMENT --> SUBTITLE["subtitle"]
+    ELEMENT --> CLOSE["closeButton"]
 ```
 
 One `BannerComponent` can be reused on home, catalog, and profile screens with different element locators and no duplicated POM implementation.

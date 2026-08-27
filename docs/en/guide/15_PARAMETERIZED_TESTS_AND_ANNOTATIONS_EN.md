@@ -4,7 +4,7 @@
 
 XCEasy remains an XCTest/XCUITest framework. `@ParameterizedTest` turns one typed scenario and its inline datasets into ordinary no-argument XCTest methods. Every dataset therefore receives independent setup/teardown, status, logs, artifacts, and Allure result, while Xcode can select and schedule it independently.
 
-Build macros with the pinned project toolchain: Xcode 26.5, Swift 6.3.2, and SwiftSyntax 603.0.2. The application deployment target remains iOS 15. Ordinary XCTest methods and runtime metadata APIs continue to work without applying macros.
+Build macros with the pinned project toolchain: Xcode 26.6, Swift 6.3.3, and SwiftSyntax 603.0.2. The application deployment target remains iOS 15. Ordinary XCTest methods and runtime metadata APIs continue to work without applying macros.
 
 ## Parameterized test
 

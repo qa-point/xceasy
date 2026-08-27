@@ -1,6 +1,6 @@
 # F16 — Allure metadata-аннотации
 
-Статус 0.1.0: реализовано. Compile-time annotations и параметры разрешаются до `setUp`; runtime alternatives остаются доступными.
+Статус 0.1.1: реализовано. Compile-time annotations и параметры разрешаются до `setUp`; runtime alternatives остаются доступными.
 
 ## Цель
 

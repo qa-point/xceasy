@@ -5,8 +5,13 @@
 
 Наследуйтесь от `XCEasyTestCase`, чтобы каждый test method получил отдельную конфигурацию, приложение, Allure result, log и artifacts. Фреймворк выполняет этапы в таком порядке:
 
-```text
-configuration → launchApplication → beforeTest → test method → afterTest → closeApplication
+```mermaid
+flowchart LR
+    CONFIGURATION["configuration"] --> LAUNCH["launchApplication"]
+    LAUNCH --> BEFORE["beforeTest"]
+    BEFORE --> TEST["test method"]
+    TEST --> AFTER["afterTest"]
+    AFTER --> CLOSE["closeApplication"]
 ```
 
 | Hook/метод | Когда вызывается | Что в нём размещать |

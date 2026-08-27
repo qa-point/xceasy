@@ -1,6 +1,6 @@
 # F04 — Reporting and AI diagnostics
 
-0.1.0 status: runtime and host artifacts are implemented; retention and schema-support window are external policy boundaries.
+0.1.1 status: runtime and host artifacts are implemented; retention and schema-support window are external policy boundaries.
 
 ## Goal
 

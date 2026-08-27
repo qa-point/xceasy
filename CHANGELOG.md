@@ -51,6 +51,6 @@ These source-breaking changes intentionally replace the unpublished beta API ins
 ### Compatibility
 
 - Minimum deployment target: iOS 15.
-- Validated toolchain: Xcode 26.5 and Swift 6.3.2.
+- Validated toolchain: Xcode 26.6 and Swift 6.3.3.
 - Diagnostic event schema: `1.0.0`.
 - Runtime source mutation remains disabled; host-side healing application requires explicit approval.

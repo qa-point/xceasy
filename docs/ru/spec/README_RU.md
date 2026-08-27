@@ -1,12 +1,12 @@
 # Спецификация XCEasy
 
-Статус: действующий versioned contract 0.1.0. Сверено с исходным кодом: 13 августа 2026 года.
+Статус: действующий versioned contract 0.1.1. Сверено с исходным кодом: 27 августа 2026 года.
 
 Спецификация разделена по фичам. Статус каждой фичи явно отделяет production behavior от частично реализованных или запланированных требований.
 
 ## Карта фич
 
-| ID | Фича | Статус 0.1.0 | Компоненты |
+| ID | Фича | Статус 0.1.1 | Компоненты |
 |---|---|---|---|
 | F01 | [Lifecycle и test context](01_LIFECYCLE_AND_CONTEXT_RU.md) | Реализовано и проверено | `XCEasyTestCase`, app, observer, context |
 | F02 | [UI elements и interaction](02_UI_INTERACTION_RU.md) | Реализовано и проверено | lazy lookup, actions, Device |

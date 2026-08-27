@@ -1,6 +1,6 @@
 # F10 — Performance telemetry and optimization
 
-0.1.0 status: per-test collection and budgets are implemented; cross-run comparison is implemented by the independent runner and project thresholds belong to user/CI.
+0.1.1 status: per-test collection and budgets are implemented; cross-run comparison is implemented by the independent runner and project thresholds belong to user/CI.
 
 ## Goal
 

@@ -37,30 +37,17 @@ XCEasy provides one style for UIKit and SwiftUI tests: lazy element lookup, auto
 
 XCEasy connects the XCTest lifecycle, lazy UI locators, and one reporting pipeline. `find` and `child` retain only lookup instructions. An action, read, or assertion resolves a fresh `XCUIElement` against the current accessibility tree. Each execution owns its configuration, application, steps, and artifacts.
 
-```text
-+----------------------+       +---------------------------+
-| XCTest / Page Object |------>| XCEasyTestCase lifecycle  |
-+----------+-----------+       | config + XCUIApplication |
-           |                   +---------------------------+
-           v
-+----------------------+
-| find / child         |       Stores a locator, not a UI element
-| lazy locator         |
-+----------+-----------+
-           | action / read / assertion
-           v
-+----------------------+       +----------------------------+
-| Current              |<----->| Action / read / assertion |
-| accessibility tree   |       +-------------+--------------+
-+----------------------+                     |
-                                             v
-                              +----------------------------+
-                              | Unified operation step     |
-                              +----+-----------+-----------+
-                                   |           |
-                         +---------+--+   +----+----------------+
-                         | Allure     |   | Log + JSONL + timing |
-                         +------------+   +----------------------+
+```mermaid
+flowchart TD
+    TEST["XCTest / Page Object"] --> LIFECYCLE["XCEasyTestCase lifecycle<br/>config + XCUIApplication"]
+    TEST --> LOCATOR["find / child<br/>lazy locator"]
+    LOCATOR -->|"action / read / assertion"| TREE["Current accessibility tree"]
+    TREE <--> OPERATION["Action / read / assertion"]
+    OPERATION --> STEP["Unified operation step"]
+    STEP --> ALLURE["Allure"]
+    STEP --> EVIDENCE["Log + JSONL + timing"]
+
+    NOTE["Stores a locator, not a UI element"] -.-> LOCATOR
 ```
 
 Primary repository layers:
@@ -75,7 +62,7 @@ Two independent public applications and their UI tests live in [`xceasy-examples
 
 ## Requirements and installation
 
-The package manifest's technical minimum is Xcode 15.0, Swift 5.9, and iOS 15. It follows from `swift-tools-version: 5.9` and the package deployment target. Xcode 14 and Swift 5.8 cannot load the manifest. The currently supported and verified toolchain matrix is Xcode 26.5 and Swift 6.3.2 in Swift 5 language mode. Xcode 15–26.4 may build the package, but compatibility is not guaranteed until those versions join the CI matrix.
+The package manifest's technical minimum is Xcode 15.0, Swift 5.9, and iOS 15. It follows from `swift-tools-version: 5.9` and the package deployment target. Xcode 14 and Swift 5.8 cannot load the manifest. The currently supported and verified toolchain matrix is Xcode 26.6 and Swift 6.3.3 in Swift 5 language mode. Xcode 15–26.5 may build the package, but compatibility is not guaranteed until those versions join the CI matrix.
 
 In Xcode, use **File → Add Package Dependencies**, enter `https://github.com/qa-point/xceasy.git`, and add the `XCEasy` product to the UI-test target. The equivalent `Package.swift` dependency is:
 
@@ -83,7 +70,7 @@ In Xcode, use **File → Add Package Dependencies**, enter `https://github.com/q
 dependencies: [
     .package(
         url: "https://github.com/qa-point/xceasy.git",
-        from: "0.1.0"
+        from: "0.1.1"
     )
 ]
 ```

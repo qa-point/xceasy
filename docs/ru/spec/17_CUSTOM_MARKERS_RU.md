@@ -1,6 +1,6 @@
 # F17 — Пользовательские маркеры
 
-Статус 0.1.0: реализованы как публичные метаданные для XCTest, Allure, diagnostics и build-time manifest.
+Статус 0.1.1: реализованы как публичные метаданные для XCTest, Allure, diagnostics и build-time manifest.
 
 ## Цель
 

@@ -1,0 +1,951 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name XCEasy
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
+import Alamofire
+import CoreGraphics
+import CryptoKit
+@_exported import Foundation
+import ObjectiveC
+import Swift
+import UIKit
+import XCTest
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+import ObjectiveC.runtime
+@_inheritsConvenienceInitializers @objc final public class XCEasyResources : ObjectiveC.NSObject {
+  @objc nonisolated final public class var bundle: Foundation.Bundle {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func id(_ value: Swift.String)
+public func epic(_ value: Swift.String)
+public func feature(_ value: Swift.String)
+public func story(_ value: Swift.String)
+public func suite(_ value: Swift.String)
+public func owner(_ value: Swift.String)
+public func lead(_ value: Swift.String)
+public func severity(_ value: XCEasy.SeverityState)
+public func label(_ name: Swift.String, _ value: Swift.String)
+public func tag(_ tags: Swift.String...)
+public func link(name: Swift.String? = nil, url: Swift.String, type: Swift.String = "custom")
+public func issue(_ value: Swift.String)
+public func tms(_ value: Swift.String)
+public func description(_ value: Swift.String)
+public func flaky()
+public func muted()
+public func displayName(_ name: Swift.String)
+public func parameter(_ name: Swift.String, value: Swift.String, excluded: Swift.Bool = false, mode: XCEasy.AllureParameterMode = .default)
+@discardableResult
+public func step<T>(_ name: Swift.String, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function, block: () throws -> T) rethrows -> T
+@available(iOS 15.0, *)
+@discardableResult
+public func step<T>(_ name: Swift.String, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function, block: () async throws -> T) async rethrows -> T
+public struct AllureCategory : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Attachment : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Executor : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Label : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AllureLinkRecord : Swift.Codable {
+  public var name: Swift.String?
+  public var url: Swift.String?
+  public var type: Swift.String?
+  public init(name: Swift.String? = nil, url: Swift.String? = nil, type: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Parameter : Swift.Codable {
+  public init(name: Swift.String, value: Swift.String, excluded: Swift.Bool = false, mode: Swift.String = AllureParameterMode.default.rawValue)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum Stage : Swift.String, Swift.Codable {
+  case scheduled
+  case running
+  case finished
+  case pending
+  case interrupted
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum Status : Swift.String, Swift.Codable {
+  case failed
+  case broken
+  case passed
+  case skipped
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct StatusDetails : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StepResult : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TestResult : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TestResultContainer : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum AllureParameterMode : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  case `default`
+  case masked
+  case hidden
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [XCEasy.AllureParameterMode]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [XCEasy.AllureParameterMode] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum LabelType : Swift.String {
+  case epic
+  case feature
+  case story
+  case suite
+  case owner
+  case severity
+  case tag
+  case id
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SeverityState : Swift.String {
+  case blocker
+  case critical
+  case normal
+  case minor
+  case trivial
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum XCEasyActionPolicy : Swift.String, Swift.Codable, Swift.Sendable {
+  case hittable
+  case displayed
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class XCEasyAllureConfig {
+  public static func apply(linkPatterns: [Swift.String : Swift.String])
+  public static func reset()
+  public static func logConfig()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class XCEasyConfig : XCEasy.ConfigProviding {
+  public static var bundleId: Swift.String {
+    get
+    set
+  }
+  public static var findTimeout: Foundation.TimeInterval {
+    get
+    set
+  }
+  public static var actionTimeout: Foundation.TimeInterval {
+    get
+    set
+  }
+  public static var assertionTimeout: Foundation.TimeInterval {
+    get
+    set
+  }
+  public static var requestTimeout: Foundation.TimeInterval {
+    get
+    set
+  }
+  public static var actionPolicy: XCEasy.XCEasyActionPolicy {
+    get
+    set
+  }
+  public static var localization: XCEasy.XCEasyConfig.Language {
+    get
+    set
+  }
+  public static var deeplinkSchema: Swift.String {
+    get
+    set
+  }
+  public static var printLogToConsole: Swift.Bool {
+    get
+    set
+  }
+  public static var uiQueryEvidenceLevel: XCEasy.XCEasyUIQueryEvidenceLevel {
+    get
+    set
+  }
+  public static var uiQueryAmbiguityPolicy: XCEasy.XCEasyUIQueryAmbiguityPolicy {
+    get
+    set
+  }
+  public static var visibilityPolicy: XCEasy.XCEasyVisibilityPolicy {
+    get
+    set
+  }
+  public static var performance: XCEasy.XCEasyPerformanceConfiguration {
+    get
+    set
+  }
+  public static var healing: XCEasy.XCEasyHealingConfiguration {
+    get
+    set
+  }
+  public static var diagnosticSnapshotByteLimit: Swift.Int {
+    get
+    set
+  }
+  public enum Language : Swift.String {
+    case en
+    case ru
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static func apply(bundleId: Swift.String? = nil, findTimeout: Foundation.TimeInterval? = nil, actionTimeout: Foundation.TimeInterval? = nil, assertionTimeout: Foundation.TimeInterval? = nil, requestTimeout: Foundation.TimeInterval? = nil, actionPolicy: XCEasy.XCEasyActionPolicy? = nil, localization: XCEasy.XCEasyConfig.Language? = nil, deeplinkSchema: Swift.String? = nil, printLogToConsole: Swift.Bool? = nil, uiQueryEvidenceLevel: XCEasy.XCEasyUIQueryEvidenceLevel? = nil, uiQueryAmbiguityPolicy: XCEasy.XCEasyUIQueryAmbiguityPolicy? = nil, visibilityPolicy: XCEasy.XCEasyVisibilityPolicy? = nil, performance: XCEasy.XCEasyPerformanceConfiguration? = nil, healing: XCEasy.XCEasyHealingConfiguration? = nil, diagnosticSnapshotByteLimit: Swift.Int? = nil)
+  public static func logConfig()
+  @objc deinit
+}
+public struct XCEasyHealingConfiguration : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public enum Mode : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+    case observe
+    case suggest
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [XCEasy.XCEasyHealingConfiguration.Mode]
+    public typealias RawValue = Swift.String
+    nonisolated public static var allCases: [XCEasy.XCEasyHealingConfiguration.Mode] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var mode: XCEasy.XCEasyHealingConfiguration.Mode
+  public var minimumConfidence: Swift.Double
+  public var minimumScoreGap: Swift.Double
+  public init(mode: XCEasy.XCEasyHealingConfiguration.Mode = .observe, minimumConfidence: Swift.Double = 0.75, minimumScoreGap: Swift.Double = 0.12)
+  public static func == (a: XCEasy.XCEasyHealingConfiguration, b: XCEasy.XCEasyHealingConfiguration) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct XCEasyPerformanceConfiguration : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public enum Level : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+    case off
+    case basic
+    case detailed
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [XCEasy.XCEasyPerformanceConfiguration.Level]
+    public typealias RawValue = Swift.String
+    nonisolated public static var allCases: [XCEasy.XCEasyPerformanceConfiguration.Level] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum BudgetPolicy : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+    case observe
+    case warn
+    case fail
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy]
+    public typealias RawValue = Swift.String
+    nonisolated public static var allCases: [XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var level: XCEasy.XCEasyPerformanceConfiguration.Level
+  public var defaultBudgetMilliseconds: Swift.Int64?
+  public var operationBudgetsMilliseconds: [Swift.String : Swift.Int64]
+  public var budgetPolicy: XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy
+  public init(level: XCEasy.XCEasyPerformanceConfiguration.Level = .basic, defaultBudgetMilliseconds: Swift.Int64? = nil, operationBudgetsMilliseconds: [Swift.String : Swift.Int64] = [:], budgetPolicy: XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy = .observe)
+  public func budgetMilliseconds(for operationKey: Swift.String) -> Swift.Int64?
+  public static func == (a: XCEasy.XCEasyPerformanceConfiguration, b: XCEasy.XCEasyPerformanceConfiguration) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum XCEasyUIQueryAmbiguityPolicy : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  case strict
+  case permissive
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [XCEasy.XCEasyUIQueryAmbiguityPolicy]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [XCEasy.XCEasyUIQueryAmbiguityPolicy] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum XCEasyUIQueryEvidenceLevel : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  case off
+  case basic
+  case detailed
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [XCEasy.XCEasyUIQueryEvidenceLevel]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [XCEasy.XCEasyUIQueryEvidenceLevel] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum XCEasyVisibilityPolicy : Swift.String, Swift.Codable, Swift.Sendable {
+  case onScreen
+  case nonEmptyFrame
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class XCDependencyContainer {
+  public static let shared: XCEasy.XCDependencyContainer
+  public var localizationManager: any XCEasy.LocalizationManaging
+  public var testContext: any XCEasy.TestContextProviding {
+    get
+    set
+  }
+  public func reset()
+  public func resetAll(resetLocalization: Swift.Bool = false)
+  @objc deinit
+}
+extension Swift.Optional where Wrapped : Swift.Collection {
+  public var isNilOrEmpty: Swift.Bool {
+    get
+  }
+}
+extension Swift.String {
+  public static var space: Swift.String {
+    get
+  }
+  public static var nonBreakSpace: Swift.String {
+    get
+  }
+  public static var plus: Swift.String {
+    get
+  }
+  public static var hyphen: Swift.String {
+    get
+  }
+  public static var minus: Swift.String {
+    get
+  }
+  public static var dash: Swift.String {
+    get
+  }
+  public static var slash: Swift.String {
+    get
+  }
+  public static var colon: Swift.String {
+    get
+  }
+  public static var newLine: Swift.String {
+    get
+  }
+  public static var tab: Swift.String {
+    get
+  }
+  public static var empty: Swift.String {
+    get
+  }
+  public static var comma: Swift.String {
+    get
+  }
+}
+public struct XCEasyParameterRule<Case> {
+  public let fieldName: Swift.String
+  public let mode: XCEasy.AllureParameterMode
+  public let excluded: Swift.Bool
+  public static func masked<Value>(_ keyPath: Swift.KeyPath<Case, Value>, excluded: Swift.Bool = false) -> XCEasy.XCEasyParameterRule<Case>
+  public static func hidden<Value>(_ keyPath: Swift.KeyPath<Case, Value>, excluded: Swift.Bool = false) -> XCEasy.XCEasyParameterRule<Case>
+  public static func excluded<Value>(_ keyPath: Swift.KeyPath<Case, Value>) -> XCEasy.XCEasyParameterRule<Case>
+}
+@attached(peer, names: arbitrary) public macro ParameterizedTest<Case>(name: Swift.String = "[{index}] {id}", cases: [Case], parameterRules: [XCEasy.XCEasyParameterRule<Case>] = []) = #externalMacro(module: "XCEasyMacroPlugin", type: "ParameterizedTestMacro")
+@attached(peer, names: prefixed(__xceasyDisplayName_)) public macro DisplayName(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyDescription_)) public macro Description(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyEpic_)) public macro Epic(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyEpics_)) public macro Epics(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyFeature_)) public macro Feature(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyFeatures_)) public macro Features(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyStory_)) public macro Story(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyStories_)) public macro Stories(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyOwner_)) public macro Owner(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyLead_)) public macro Lead(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasySeverity_)) public macro Severity(_ value: XCEasy.SeverityState) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyTag_)) public macro Tag(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyTags_)) public macro Tags(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyAllureId_)) public macro AllureId(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyIssue_)) public macro Issue(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyIssues_)) public macro Issues(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyTmsLink_)) public macro TmsLink(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyTmsLinks_)) public macro TmsLinks(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyLink_)) public macro Link(_ value: Swift.String = "", name: Swift.String = "", url: Swift.String = "", type: Swift.String = "custom") = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyLinks_)) public macro Links(_ values: Swift.String...) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyFlaky_)) public macro Flaky() = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyMuted_)) public macro Muted() = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@attached(peer, names: prefixed(__xceasyMarker_)) public macro Marker(_ value: Swift.String) = #externalMacro(module: "XCEasyMacroPlugin", type: "MetadataMacro")
+@_hasMissingDesignatedInitializers public class ApiManager {
+  public init(baseURL: Swift.String, expectationFactory: any XCEasy.TestExpectationFactory = DefaultExpectationFactory())
+  public func get(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, soft: Swift.Bool = false, completion: @escaping (XCEasy.ApiResult) -> Swift.Void)
+  public func post(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, body: Foundation.Data? = nil, soft: Swift.Bool = false, completion: @escaping (XCEasy.ApiResult) -> Swift.Void)
+  public func put(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, body: Foundation.Data? = nil, soft: Swift.Bool = false, completion: @escaping (XCEasy.ApiResult) -> Swift.Void)
+  public func delete(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, soft: Swift.Bool = false, completion: @escaping (XCEasy.ApiResult) -> Swift.Void)
+  public func patch(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, body: Foundation.Data? = nil, soft: Swift.Bool = false, completion: @escaping (XCEasy.ApiResult) -> Swift.Void)
+  @available(iOS 15.0, *)
+  public func get(route: Swift.String, headers: [Swift.String : Swift.String]? = nil) async throws -> XCEasy.ApiResponse
+  @available(iOS 15.0, *)
+  public func post(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, body: Foundation.Data? = nil) async throws -> XCEasy.ApiResponse
+  @available(iOS 15.0, *)
+  public func put(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, body: Foundation.Data? = nil) async throws -> XCEasy.ApiResponse
+  @available(iOS 15.0, *)
+  public func delete(route: Swift.String, headers: [Swift.String : Swift.String]? = nil) async throws -> XCEasy.ApiResponse
+  @available(iOS 15.0, *)
+  public func patch(route: Swift.String, headers: [Swift.String : Swift.String]? = nil, body: Foundation.Data? = nil) async throws -> XCEasy.ApiResponse
+  @objc deinit
+}
+public enum ApiError : Swift.Error, Swift.CustomStringConvertible {
+  case invalidURL
+  case timeout
+  case noData
+  case invalidResponse
+  case network(any Swift.Error)
+  case http(statusCode: Swift.Int)
+  case unknown(any Swift.Error)
+  public var description: Swift.String {
+    get
+  }
+}
+public struct ApiResponse {
+  public let data: Foundation.Data
+  public let response: Foundation.HTTPURLResponse
+  public var statusCode: Swift.Int {
+    get
+  }
+  public var headers: [Swift.AnyHashable : Any] {
+    get
+  }
+  public init(data: Foundation.Data, response: Foundation.HTTPURLResponse)
+}
+public typealias ApiResult = Swift.Result<XCEasy.ApiResponse, XCEasy.ApiError>
+public enum LaunchArgumentsManager {
+  public static var values: [Swift.String] {
+    get
+  }
+  public static func add(_ argument: Swift.String)
+  public static func remove(_ argument: Swift.String)
+  public static func removeAll()
+}
+public enum LaunchEnvironmentManager {
+  public static var values: [Swift.String : Swift.String] {
+    get
+  }
+  public static func set(_ value: Swift.String, for key: Swift.String)
+  public static func set(_ values: [Swift.String : Swift.String])
+  public static func value(for key: Swift.String) -> Swift.String?
+  public static func remove(_ key: Swift.String)
+  public static func removeAll()
+}
+public protocol ConfigProviding {
+  static var bundleId: Swift.String { get set }
+  static var findTimeout: Foundation.TimeInterval { get set }
+  static var actionTimeout: Foundation.TimeInterval { get set }
+  static var assertionTimeout: Foundation.TimeInterval { get set }
+  static var requestTimeout: Foundation.TimeInterval { get set }
+  static var actionPolicy: XCEasy.XCEasyActionPolicy { get set }
+  static var localization: XCEasy.XCEasyConfig.Language { get set }
+  static var deeplinkSchema: Swift.String { get set }
+  static var printLogToConsole: Swift.Bool { get set }
+  static var uiQueryEvidenceLevel: XCEasy.XCEasyUIQueryEvidenceLevel { get set }
+  static var uiQueryAmbiguityPolicy: XCEasy.XCEasyUIQueryAmbiguityPolicy { get set }
+  static var visibilityPolicy: XCEasy.XCEasyVisibilityPolicy { get set }
+  static var performance: XCEasy.XCEasyPerformanceConfiguration { get set }
+  static var healing: XCEasy.XCEasyHealingConfiguration { get set }
+  static var diagnosticSnapshotByteLimit: Swift.Int { get set }
+}
+public protocol LocalizationManaging {
+  func setLocalization(for language: Swift.String)
+  func string(forKey key: Swift.String) -> Swift.String
+  func string(forKey key: Swift.String, arguments: [any Swift.CVarArg]) -> Swift.String
+}
+public protocol TestContextProviding {
+  var app: XCUIAutomation.XCUIApplication? { get set }
+  var testId: Swift.String? { get set }
+  var displayName: Swift.String? { get set }
+  var testResult: XCEasy.TestResult? { get set }
+  var labels: [XCEasy.Label] { get set }
+  var links: [XCEasy.AllureLinkRecord] { get set }
+  var description: Swift.String? { get set }
+  var testSuite: Swift.String? { get set }
+  var stepStack: [XCEasy.StepResult] { get set }
+  var screenshot: XCEasy.ScreenshotAttachment? { get set }
+  func addLabel(_ label: XCEasy.Label)
+  func isLabelExists(_ name: Swift.String) -> Swift.Bool
+  func addLink(_ link: XCEasy.AllureLinkRecord)
+  func clearTestStorages()
+  func clearApp()
+  func setApp()
+  func pushStep(_ step: XCEasy.StepResult)
+  func popStep() -> XCEasy.StepResult?
+}
+public protocol TestExpectationFactory {
+  func makeExpectation(description: Swift.String) -> XCTest.XCTestExpectation
+  func waitForExpectations(timeout: Foundation.TimeInterval) -> Swift.Bool
+}
+extension XCTest.XCTestCase : XCEasy.TestExpectationFactory {
+  @objc dynamic public func makeExpectation(description: Swift.String) -> XCTest.XCTestExpectation
+  @objc dynamic public func waitForExpectations(timeout: Foundation.TimeInterval) -> Swift.Bool
+}
+public func fail(_ message: Swift.String = "Test failed", file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertTrue(expression: @autoclosure () throws -> Swift.Bool, label: Swift.String? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertFalse(expression: @autoclosure () throws -> Swift.Bool, label: Swift.String? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertEqual<T>(actual: @autoclosure () throws -> T, expected: @autoclosure () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where T : Swift.Equatable
+public func assertNotEqual<T>(actual: @autoclosure () throws -> T, expected: @autoclosure () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where T : Swift.Equatable
+public func assertGreaterThan<T>(actual: @autoclosure () throws -> T, expected: @autoclosure () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where T : Swift.Comparable
+public func assertGreaterThanOrEqual<T>(actual: @autoclosure () throws -> T, expected: @autoclosure () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where T : Swift.Comparable
+public func assertLessThan<T>(actual: @autoclosure () throws -> T, expected: @autoclosure () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where T : Swift.Comparable
+public func assertLessThanOrEqual<T>(actual: @autoclosure () throws -> T, expected: @autoclosure () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where T : Swift.Comparable
+public func assertContains(string: @autoclosure () throws -> Swift.String, substring: @autoclosure () throws -> Swift.String, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertDoesNotContain(string: @autoclosure () throws -> Swift.String, substring: @autoclosure () throws -> Swift.String, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertContains<C>(collection: @autoclosure () throws -> C, element: @autoclosure () throws -> C.Element, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where C : Swift.Collection, C.Element : Swift.Equatable
+public func assertDoesNotContain<C>(collection: @autoclosure () throws -> C, element: @autoclosure () throws -> C.Element, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where C : Swift.Collection, C.Element : Swift.Equatable
+public func assertNil<T>(actual: @autoclosure () throws -> T?, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertNotNil<T>(actual: @autoclosure () throws -> T?, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+public func assertEmpty<C>(actual: @autoclosure () throws -> C, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where C : Swift.Collection
+public func assertNotEmpty<C>(actual: @autoclosure () throws -> C, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) where C : Swift.Collection
+public func assertThrows<T>(_ label: Swift.String? = nil, expression: () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line)
+@discardableResult
+public func assertDoesNotThrow<T>(_ label: Swift.String? = nil, expression: () throws -> T, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> T?
+public enum Deeplink {
+  public static func open(_ path: Swift.String, name: Swift.String? = nil)
+}
+@objc @_inheritsConvenienceInitializers public class Device : XCEasy.XCEasyApp {
+  public static func tap(at position: XCEasy.ScreenPosition)
+  public static func swipe(from startPosition: XCEasy.ScreenPosition, to endPosition: XCEasy.ScreenPosition)
+  public static func press(at position: XCEasy.ScreenPosition, duration: Swift.Double)
+  @objc @discardableResult
+  public static func getClipboardValue() -> Swift.String
+  @objc public static func wait(seconds: Foundation.TimeInterval)
+  public static func setOrientation(_ orientation: XCEasy.DeviceOrientation)
+  @objc override dynamic public init(invocation: Foundation.NSInvocation?)
+  @objc override dynamic public init(selector: ObjectiveC.Selector)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum DeviceOrientation {
+  case unknown, portrait, portraitUpsideDown, landscapeLeft, landscapeRight, faceUp, faceDown
+  public static func == (a: XCEasy.DeviceOrientation, b: XCEasy.DeviceOrientation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Orientation {
+}
+public struct ScreenPosition {
+  public static let leftCenter: XCEasy.ScreenPosition
+  public static let rightCenter: XCEasy.ScreenPosition
+  public static let topCenter: XCEasy.ScreenPosition
+  public static let bottomCenter: XCEasy.ScreenPosition
+  public static let center: XCEasy.ScreenPosition
+  public static let leftTop: XCEasy.ScreenPosition
+  public static let leftBottom: XCEasy.ScreenPosition
+  public static let rightTop: XCEasy.ScreenPosition
+  public static let rightBottom: XCEasy.ScreenPosition
+}
+public func given(_ name: Swift.String, actionStep: () -> Swift.Void)
+public func when(_ name: Swift.String, actionStep: () -> Swift.Void)
+public func then(_ name: Swift.String, actionStep: () -> Swift.Void)
+public func and(_ name: Swift.String, actionStep: () -> Swift.Void)
+@available(iOS 15.0, *)
+@discardableResult
+public func given<T>(_ name: Swift.String, actionStep: () async throws -> T) async rethrows -> T
+@available(iOS 15.0, *)
+@discardableResult
+public func when<T>(_ name: Swift.String, actionStep: () async throws -> T) async rethrows -> T
+@available(iOS 15.0, *)
+@discardableResult
+public func then<T>(_ name: Swift.String, actionStep: () async throws -> T) async rethrows -> T
+@available(iOS 15.0, *)
+@discardableResult
+public func and<T>(_ name: Swift.String, actionStep: () async throws -> T) async rethrows -> T
+public protocol XCEasyComponent {
+  var element: XCEasy.XCEasyUIElement { get }
+  var componentName: Swift.String { get }
+}
+extension XCEasy.XCEasyComponent {
+  public static var defaultComponentName: Swift.String {
+    get
+  }
+  public var componentName: Swift.String {
+    get
+  }
+  @discardableResult
+  public func waitForDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func waitForHittable(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func waitForEnabled(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func waitForSelected(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func assertExists(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertDoesNotExist(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsNotDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsHidden(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsHittable(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertDisappears(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, after action: () -> Swift.Void) -> Self
+  @discardableResult
+  public func step<T>(_ operation: Swift.String, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function, block: () throws -> T) rethrows -> T
+  @available(iOS 15.0, *)
+  @discardableResult
+  public func step<T>(_ operation: Swift.String, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function, block: () async throws -> T) async rethrows -> T
+}
+public enum XCEasyComponentPosition : Swift.Equatable, Swift.Sendable {
+  case first
+  case last
+  case index(Swift.Int)
+  public static func == (a: XCEasy.XCEasyComponentPosition, b: XCEasy.XCEasyComponentPosition) -> Swift.Bool
+}
+public protocol XCEasyIndexedComponent : XCEasy.XCEasyComponent {
+  static var collection: XCEasy.XCEasyUIElement { get }
+  init(position: XCEasy.XCEasyComponentPosition, componentName: Swift.String?)
+}
+extension XCEasy.XCEasyIndexedComponent {
+  public static func defaultComponentName(for position: XCEasy.XCEasyComponentPosition) -> Swift.String
+  public init()
+  public init(index: Swift.Int)
+  public init(index: Swift.Int, componentName: Swift.String?)
+  public init(componentName: Swift.String)
+}
+public struct XCEasyComponentCollection<Component> where Component : XCEasy.XCEasyIndexedComponent {
+  public init()
+  public var first: Component {
+    get
+  }
+  public var last: Component {
+    get
+  }
+  public func get(index: Swift.Int, componentName: Swift.String? = nil, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> Component
+  public func get(indices: Swift.Range<Swift.Int>, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> [Component]
+  @discardableResult
+  public func assertCount(_ expectedCount: Swift.Int, timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> XCEasy.XCEasyComponentCollection<Component>
+  @discardableResult
+  public func assertCount(atLeast minimumCount: Swift.Int, timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> XCEasy.XCEasyComponentCollection<Component>
+  @discardableResult
+  public func assertCount(atMost maximumCount: Swift.Int, timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> XCEasy.XCEasyComponentCollection<Component>
+  @discardableResult
+  public func assertIsEmpty(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> XCEasy.XCEasyComponentCollection<Component>
+  @discardableResult
+  public func assertIsNotEmpty(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> XCEasy.XCEasyComponentCollection<Component>
+  @discardableResult
+  public func waitForCount(_ expectedCount: Swift.Int, timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> Swift.Bool
+  @discardableResult
+  public func waitForCount(atLeast minimumCount: Swift.Int, timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> Swift.Bool
+  @discardableResult
+  public func waitForCount(atMost maximumCount: Swift.Int, timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> Swift.Bool
+  @discardableResult
+  public func assertAllDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> XCEasy.XCEasyComponentCollection<Component>
+  @discardableResult
+  public func waitForAllDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, file: Swift.StaticString = #fileID, line: Swift.UInt = #line, function: Swift.StaticString = #function) -> Swift.Bool
+}
+public func softly(_ title: Swift.String = "Soft assertions", file: Swift.StaticString = #filePath, line: Swift.UInt = #line, block: () -> Swift.Void)
+@available(iOS 15.0, *)
+public func softly(_ title: Swift.String = "Soft assertions", file: Swift.StaticString = #filePath, line: Swift.UInt = #line, block: () async -> Swift.Void) async
+@objc @_inheritsConvenienceInitializers open class XCEasyApp : XCTest.XCTestCase {
+  @objc public func launchApplication()
+  @objc public func closeApplication()
+  @objc public func reopenApplication()
+  @objc public func printDebugTree()
+  @objc override dynamic public init(invocation: Foundation.NSInvocation?)
+  @objc override dynamic public init(selector: ObjectiveC.Selector)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class XCEasyTestCase : XCEasy.XCEasyApp {
+  @objc open func configuration()
+  @objc open func beforeTest()
+  @objc open func afterTest()
+  @objc override dynamic open class func setUp()
+  @objc override dynamic open func setUpWithError() throws
+  @objc override dynamic open func tearDownWithError() throws
+  @objc override dynamic public init(invocation: Foundation.NSInvocation?)
+  @objc override dynamic public init(selector: ObjectiveC.Selector)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(XCEasyTestObserver) open class XCEasyTestObserver : ObjectiveC.NSObject, XCTest.XCTestObservation {
+  @objc deinit
+}
+extension XCEasy.XCEasyTestObserver {
+  @objc dynamic public func testBundleWillStart(_ testBundle: Foundation.Bundle)
+  @objc dynamic public func testBundleDidFinish(_ testBundle: Foundation.Bundle)
+  @objc dynamic public func testSuiteWillStart(_ testSuite: XCTest.XCTestSuite)
+  @objc dynamic public func testSuiteDidFinish(_ testSuite: XCTest.XCTestSuite)
+  @objc dynamic public func testCaseWillStart(_ testCase: XCTest.XCTestCase)
+  @objc dynamic public func testCaseDidFinish(_ testCase: XCTest.XCTestCase)
+  @objc dynamic public func testCase(_ testCase: XCTest.XCTestCase, didRecord issue: XCTest.XCTIssue)
+}
+extension XCEasy.XCEasyUIElement {
+  @discardableResult
+  public func tap(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, policy: XCEasy.XCEasyActionPolicy? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> Self
+  @discardableResult
+  public func doubleTap(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, policy: XCEasy.XCEasyActionPolicy? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> Self
+  @discardableResult
+  public func press(forDuration duration: Foundation.TimeInterval, timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, policy: XCEasy.XCEasyActionPolicy? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> Self
+  @discardableResult
+  public func swipe(_ direction: XCEasy.XCEasyUIElement.SwipeDirection, timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, policy: XCEasy.XCEasyActionPolicy? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> Self
+  @discardableResult
+  public func typeText(_ text: Swift.String, timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, policy: XCEasy.XCEasyActionPolicy? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> Self
+  @discardableResult
+  public func waitForDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func waitForHittable(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func waitForEnabled(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func waitForSelected(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isExists(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isNotExists(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isHittable(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isNotHittable(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isNotDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isHidden(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isEnabled(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isDisabled(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isSelected(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func isNotSelected(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.Bool
+  @discardableResult
+  public func getLabel(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.String
+  @discardableResult
+  public func getValue(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout) -> Swift.String
+  @discardableResult
+  public func clearField(timeout: Foundation.TimeInterval = XCEasyConfig.actionTimeout, policy: XCEasy.XCEasyActionPolicy? = nil, file: Swift.StaticString = #filePath, line: Swift.UInt = #line) -> Self
+  @discardableResult
+  public func printDebugTree() -> Self
+}
+extension XCEasy.XCEasyUIElement {
+  @discardableResult
+  public func assertExists(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertDoesNotExist(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsSelected(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsNotSelected(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> XCEasy.XCEasyUIElement
+  @discardableResult
+  public func assertIsEnabled(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsDisabled(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsHittable(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsNotHittable(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsNotDisplayed(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertIsHidden(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertDisappears(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, after action: () -> Swift.Void) -> Self
+  @discardableResult
+  public func assertBecomesHidden(timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout, after action: () -> Swift.Void) -> Self
+  @discardableResult
+  public func assertLabel(value: Swift.String, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+  @discardableResult
+  public func assertValue(text: Swift.String, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.assertionTimeout) -> Self
+}
+extension XCEasy.XCEasyUIElement {
+  public func child(identifier: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+  public func child(format: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+  public func child(type: XCEasy.XCEasyUIElement.ElementType, identifier: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+  public func child(type: XCEasy.XCEasyUIElement.ElementType, format: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+  public func child(text: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+  public func child(type: XCEasy.XCEasyUIElement.ElementType, text: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+}
+public func find(identifier: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public func find(format: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public func find(type: XCEasy.XCEasyUIElement.ElementType, identifier: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public func find(type: XCEasy.XCEasyUIElement.ElementType, format: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public func find(text: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public func find(type: XCEasy.XCEasyUIElement.ElementType, text: Swift.String, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public func find(type: XCEasy.XCEasyUIElement.ElementType, index: Swift.Int? = nil, desc: Swift.String? = nil, timeout: Foundation.TimeInterval = XCEasyConfig.findTimeout) -> XCEasy.XCEasyUIElement
+public enum XCEasyElementState : Swift.String, Swift.Codable {
+  case absent
+  case hidden
+  case visible
+  case hittable
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension XCEasy.XCEasyUIElement {
+  public enum ElementType {
+    case any, other, application, group, window, sheet, drawer, alert, dialog, button, radioButton, radioGroup, checkBox, disclosureTriangle, popUpButton, comboBox, menuButton, toolbarButton, popover, keyboard, key, navigationBar, tabBar, tabGroup, toolbar, statusBar, table, tableRow, tableColumn, outline, outlineRow, browser, collectionView, slider, pageIndicator, progressIndicator, activityIndicator, segmentedControl, picker, pickerWheel, `switch`, toggle, link, image, icon, searchField, scrollView, scrollBar, staticText, textField, secureTextField, datePicker, textView, menu, menuItem, menuBar, menuBarItem, map, webView, incrementArrow, decrementArrow, timeline, ratingIndicator, valueIndicator, splitGroup, splitter, relevanceIndicator, colorWell, helpTag, matte, dockItem, ruler, rulerMarker, grid, levelIndicator, cell, layoutArea, layoutItem, handle, stepper, tab, touchBar, statusItem
+    public static func == (a: XCEasy.XCEasyUIElement.ElementType, b: XCEasy.XCEasyUIElement.ElementType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct ElementTypeModel {
+  }
+  public enum SwipeDirection {
+    case up, down, left, right
+    public static func == (a: XCEasy.XCEasyUIElement.SwipeDirection, b: XCEasy.XCEasyUIElement.SwipeDirection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class XCEasyUIElement : ObjectiveC.NSObject {
+  public func element(at position: XCEasy.XCEasyComponentPosition, desc: Swift.String? = nil) -> XCEasy.XCEasyUIElement
+  @objc override dynamic public func forwardingTarget(for aSelector: ObjectiveC.Selector!) -> Any?
+  @objc override dynamic public func responds(to aSelector: ObjectiveC.Selector!) -> Swift.Bool
+  @objc deinit
+}
+public struct ScreenshotAttachment {
+  public let name: Swift.String
+  public let filename: Swift.String
+  public let data: Foundation.Data
+  public let type: XCEasy.ScreenshotAttachment.AttachmentType
+  public init(name: Swift.String, filename: Swift.String, data: Foundation.Data, type: XCEasy.ScreenshotAttachment.AttachmentType = .png)
+  public enum AttachmentType : Swift.String {
+    case png
+    case jpg
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+@_hasMissingDesignatedInitializers public class ScreenshotUtils {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class StepUtils {
+  @objc deinit
+}
+final public class DefaultExpectationFactory : XCEasy.TestExpectationFactory {
+  public init()
+  final public func makeExpectation(description: Swift.String) -> XCTest.XCTestExpectation
+  final public func waitForExpectations(timeout: Foundation.TimeInterval) -> Swift.Bool
+  @objc deinit
+}
+extension XCEasy.Stage : Swift.Equatable {}
+extension XCEasy.Stage : Swift.Hashable {}
+extension XCEasy.Stage : Swift.RawRepresentable {}
+extension XCEasy.Status : Swift.Equatable {}
+extension XCEasy.Status : Swift.Hashable {}
+extension XCEasy.Status : Swift.RawRepresentable {}
+extension XCEasy.AllureParameterMode : Swift.Equatable {}
+extension XCEasy.AllureParameterMode : Swift.Hashable {}
+extension XCEasy.AllureParameterMode : Swift.RawRepresentable {}
+extension XCEasy.LabelType : Swift.Equatable {}
+extension XCEasy.LabelType : Swift.Hashable {}
+extension XCEasy.LabelType : Swift.RawRepresentable {}
+extension XCEasy.SeverityState : Swift.Equatable {}
+extension XCEasy.SeverityState : Swift.Hashable {}
+extension XCEasy.SeverityState : Swift.RawRepresentable {}
+extension XCEasy.XCEasyActionPolicy : Swift.Equatable {}
+extension XCEasy.XCEasyActionPolicy : Swift.Hashable {}
+extension XCEasy.XCEasyActionPolicy : Swift.RawRepresentable {}
+extension XCEasy.XCEasyConfig.Language : Swift.Equatable {}
+extension XCEasy.XCEasyConfig.Language : Swift.Hashable {}
+extension XCEasy.XCEasyConfig.Language : Swift.RawRepresentable {}
+extension XCEasy.XCEasyHealingConfiguration.Mode : Swift.Equatable {}
+extension XCEasy.XCEasyHealingConfiguration.Mode : Swift.Hashable {}
+extension XCEasy.XCEasyHealingConfiguration.Mode : Swift.RawRepresentable {}
+extension XCEasy.XCEasyPerformanceConfiguration.Level : Swift.Equatable {}
+extension XCEasy.XCEasyPerformanceConfiguration.Level : Swift.Hashable {}
+extension XCEasy.XCEasyPerformanceConfiguration.Level : Swift.RawRepresentable {}
+extension XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy : Swift.Equatable {}
+extension XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy : Swift.Hashable {}
+extension XCEasy.XCEasyPerformanceConfiguration.BudgetPolicy : Swift.RawRepresentable {}
+extension XCEasy.XCEasyUIQueryAmbiguityPolicy : Swift.Equatable {}
+extension XCEasy.XCEasyUIQueryAmbiguityPolicy : Swift.Hashable {}
+extension XCEasy.XCEasyUIQueryAmbiguityPolicy : Swift.RawRepresentable {}
+extension XCEasy.XCEasyUIQueryEvidenceLevel : Swift.Equatable {}
+extension XCEasy.XCEasyUIQueryEvidenceLevel : Swift.Hashable {}
+extension XCEasy.XCEasyUIQueryEvidenceLevel : Swift.RawRepresentable {}
+extension XCEasy.XCEasyVisibilityPolicy : Swift.Equatable {}
+extension XCEasy.XCEasyVisibilityPolicy : Swift.Hashable {}
+extension XCEasy.XCEasyVisibilityPolicy : Swift.RawRepresentable {}
+extension XCEasy.DeviceOrientation : Swift.Equatable {}
+extension XCEasy.DeviceOrientation : Swift.Hashable {}
+extension XCEasy.XCEasyUIElement.SwipeDirection : Swift.Equatable {}
+extension XCEasy.XCEasyUIElement.SwipeDirection : Swift.Hashable {}
+extension XCEasy.XCEasyElementState : Swift.Equatable {}
+extension XCEasy.XCEasyElementState : Swift.Hashable {}
+extension XCEasy.XCEasyElementState : Swift.RawRepresentable {}
+extension XCEasy.XCEasyUIElement.ElementType : Swift.Equatable {}
+extension XCEasy.XCEasyUIElement.ElementType : Swift.Hashable {}
+extension XCEasy.ScreenshotAttachment.AttachmentType : Swift.Equatable {}
+extension XCEasy.ScreenshotAttachment.AttachmentType : Swift.Hashable {}
+extension XCEasy.ScreenshotAttachment.AttachmentType : Swift.RawRepresentable {}

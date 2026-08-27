@@ -5,8 +5,13 @@ English · [Русский](../../ru/guide/02_LIFECYCLE_RU.md) · [Contents](../
 
 Inherit from `XCEasyTestCase` so every test method receives isolated configuration, application, Allure result, log, and artifacts. The framework runs these phases in order:
 
-```text
-configuration → launchApplication → beforeTest → test method → afterTest → closeApplication
+```mermaid
+flowchart LR
+    CONFIGURATION["configuration"] --> LAUNCH["launchApplication"]
+    LAUNCH --> BEFORE["beforeTest"]
+    BEFORE --> TEST["test method"]
+    TEST --> AFTER["afterTest"]
+    AFTER --> CLOSE["closeApplication"]
 ```
 
 | Hook/method | When it runs | What belongs there |

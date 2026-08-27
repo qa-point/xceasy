@@ -1,6 +1,6 @@
 # F06 — Delivery and quality
 
-0.1.0 status: repository release contract is implemented; signing and publication require maintainer authority.
+0.1.1 status: repository release contract is implemented; signing and publication require maintainer authority.
 
 ## Goal
 
@@ -10,9 +10,9 @@ Make XCEasy reproducibly buildable, consumable, and verifiable by humans, CI, an
 
 - Tuist defines framework/unit/UI targets, iOS 15, and the Alamofire package.
 - `Package.swift` is the primary source-consumer manifest; Tuist remains the project generator. The Objective-C observer bootstrap is a separate SPM target.
-- `xceasy.toolchain.json` and `.mise.toml` pin Tuist 4.203.3 and record Xcode 26.5, Swift 6.3.2, iOS 15 minimum, and iOS 26.5 simulator verification.
+- `xceasy.toolchain.json` and `.mise.toml` pin Tuist 4.203.3 and record Xcode 26.6, Swift 6.3.3, iOS 15 minimum, and iOS 26.5 simulator verification.
 - `scripts/check.sh all` is the complete local acceptance entry point. Hosted GitHub Actions runs SwiftLint, contracts, an iOS Swift Package consumer build, framework unit tests, and the release contract through `scripts/check.sh ci`. The internal SwiftUI/UIKit fixture, race checks, and aggregate [F13 coverage policy](13_TEST_COVERAGE_EN.md) remain local acceptance gates.
-- Generated workspaces, Derived output, IDE state, and result bundles are ignored. `release-metadata.json.version` is the single version source; `CHANGELOG.md` and the versioned distributable Swift-interface baseline define the remaining `0.1.0` release contract. `scripts/check.sh release` rebuilds the interface with library evolution enabled and rejects removed or changed baseline API lines while allowing additions.
+- Generated workspaces, Derived output, IDE state, and result bundles are ignored. `release-metadata.json.version` is the single version source; `CHANGELOG.md` and the versioned distributable Swift-interface baseline define the remaining `0.1.1` release contract. `scripts/check.sh release` rebuilds the interface with library evolution enabled and rejects removed or changed baseline API lines while allowing additions.
 
 ## Requirements
 
@@ -38,7 +38,7 @@ Make XCEasy reproducibly buildable, consumable, and verifiable by humans, CI, an
 ## Decisions and remaining questions
 
 - `F06-DEC-001`: source SPM is the primary consumer channel; pinned Tuist is the repository project generator.
-- `F06-DEC-002`: the current matrix is Xcode 26.5/Swift 6.3.2, iOS 15 minimum, iOS 26.5 tested simulator; changes require an ADR/migration.
+- `F06-DEC-002`: the current matrix is Xcode 26.6/Swift 6.3.3, iOS 15 minimum, iOS 26.5 tested simulator; changes require an ADR/migration.
 - `F06-DEC-003`: generated projects, workspaces, Derived output, user state, and result bundles are not committed.
 - `F06-DEC-004`: SemVer, changelog, release metadata, and automated source-compatibility checks are mandatory release inputs.
 - `F06-DEC-005`: a `v<version>` tag runs the full release-readiness workflow and produces a checksummed source archive; publishing or signing it still requires maintainer authority.

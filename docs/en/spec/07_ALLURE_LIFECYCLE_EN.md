@@ -1,6 +1,6 @@
 # F07 — Allure lifecycle and compatibility
 
-0.1.0 status: implemented and verified.
+0.1.1 status: implemented and verified.
 
 ## Accepted product decisions
 

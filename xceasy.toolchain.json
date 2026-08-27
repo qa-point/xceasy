@@ -2,12 +2,12 @@
   "schema_version": "1.0.0",
   "tuist": "4.203.3",
   "xcode": {
-    "minimum": "26.5",
-    "tested": ["26.5"],
-    "build": "17F42"
+    "minimum": "26.6",
+    "tested": ["26.6"],
+    "build": "17F113"
   },
   "swift": {
-    "compiler": "6.3.2",
+    "compiler": "6.3.3",
     "language_mode": "5"
   },
   "ios": {

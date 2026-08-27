@@ -1,6 +1,6 @@
 # F13 — Test coverage и quality gates
 
-Статус 0.1.0: unit/UI coverage gate реализован; diff coverage отложен до появления стабильной history.
+Статус 0.1.1: unit/UI coverage gate реализован; diff coverage отложен до появления стабильной history.
 
 ## Цель
 

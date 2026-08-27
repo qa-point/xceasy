@@ -12,7 +12,7 @@ Follow Swift API Design Guidelines and the existing project structure. This docu
 - Use `// MARK: -` for substantial sections, not every method.
 - Never edit generated directories or treat them as style examples.
 - Keep imports minimal; order Apple/system modules before external modules.
-- Render documentation diagrams as ASCII in fenced `text` blocks. Do not use Mermaid, so diagrams stay readable in GitHub, IDEs, terminals, and AI context.
+- Render conceptual documentation diagrams as Mermaid so GitHub displays them consistently. Keep console output, logs, and literal directory trees in fenced `text` blocks.
 
 ## 3. Naming and APIs
 

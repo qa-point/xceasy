@@ -1,6 +1,6 @@
 # F12 — Переиспользуемые UI-компоненты и POM
 
-Статус 0.1.0: реализовано и проверено, включая indexed collections и component-aware steps.
+Статус 0.1.1: реализовано и проверено, включая indexed collections и component-aware steps.
 
 ## Цель
 
@@ -10,12 +10,12 @@
 
 Баннер — это не набор независимых глобальных selectors, а компонент:
 
-```text
-BannerComponent
-└── element
-    ├── title
-    ├── subtitle
-    └── closeButton
+```mermaid
+flowchart TD
+    COMPONENT["BannerComponent"] --> ELEMENT["element"]
+    ELEMENT --> TITLE["title"]
+    ELEMENT --> SUBTITLE["subtitle"]
+    ELEMENT --> CLOSE["closeButton"]
 ```
 
 Один `BannerComponent` может использоваться на home, catalog и profile screen с разными element locator-ами без копирования POM.

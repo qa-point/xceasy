@@ -1,6 +1,6 @@
 # F11 — Состояния UI-элемента и negative assertions
 
-Статус 0.1.0: реализовано и проверено на UIKit/SwiftUI fixtures.
+Статус 0.1.1: реализовано и проверено на UIKit/SwiftUI fixtures.
 
 ## Цель
 

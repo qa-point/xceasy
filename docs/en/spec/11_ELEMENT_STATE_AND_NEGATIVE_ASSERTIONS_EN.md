@@ -1,6 +1,6 @@
 # F11 — UI element state and negative assertions
 
-0.1.0 status: implemented and verified on UIKit/SwiftUI fixtures.
+0.1.1 status: implemented and verified on UIKit/SwiftUI fixtures.
 
 ## Goal
 

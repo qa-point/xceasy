@@ -37,30 +37,17 @@ XCEasy даёт единый стиль для UIKit и SwiftUI тестов: л
 
 XCEasy связывает lifecycle XCTest, ленивые UI locators и единую систему отчётности. `find` и `child` сохраняют только способ поиска. Реальный `XCUIElement` разрешается заново при действии, чтении или assertion, поэтому операция работает с текущим accessibility tree. Один execution владеет собственными config, приложением, шагами и artifacts.
 
-```text
-+----------------------+       +---------------------------+
-| XCTest / Page Object |------>| XCEasyTestCase lifecycle  |
-+----------+-----------+       | config + XCUIApplication |
-           |                   +---------------------------+
-           v
-+----------------------+
-| find / child         |       Хранит locator, но не UI-элемент
-| lazy locator         |
-+----------+-----------+
-           | действие / чтение / assertion
-           v
-+----------------------+       +----------------------------+
-| Текущий              |<----->| Action / read / assertion |
-| accessibility tree   |       +-------------+--------------+
-+----------------------+                     |
-                                             v
-                              +----------------------------+
-                              | Единый operation step      |
-                              +----+-----------+-----------+
-                                   |           |
-                         +---------+--+   +----+----------------+
-                         | Allure     |   | Log + JSONL + timing |
-                         +------------+   +----------------------+
+```mermaid
+flowchart TD
+    TEST["XCTest / Page Object"] --> LIFECYCLE["XCEasyTestCase lifecycle<br/>config + XCUIApplication"]
+    TEST --> LOCATOR["find / child<br/>lazy locator"]
+    LOCATOR -->|"действие / чтение / assertion"| TREE["Текущий accessibility tree"]
+    TREE <--> OPERATION["Action / read / assertion"]
+    OPERATION --> STEP["Единый operation step"]
+    STEP --> ALLURE["Allure"]
+    STEP --> EVIDENCE["Log + JSONL + timing"]
+
+    NOTE["Хранит locator, но не UI-элемент"] -.-> LOCATOR
 ```
 
 Основные слои репозитория:
@@ -75,7 +62,7 @@ XCEasy связывает lifecycle XCTest, ленивые UI locators и еди
 
 ## Требования и установка
 
-Технический минимум package manifest — Xcode 15.0, Swift 5.9 и iOS 15. Он определяется `swift-tools-version: 5.9` и deployment target package. Xcode 14 и Swift 5.8 не смогут прочитать manifest. Поддержанная и проверенная сейчас toolchain matrix — Xcode 26.5 и Swift 6.3.2 в Swift 5 language mode. Xcode 15–26.4 может собрать package, но пока эти версии не входят в CI matrix, проект не гарантирует их совместимость.
+Технический минимум package manifest — Xcode 15.0, Swift 5.9 и iOS 15. Он определяется `swift-tools-version: 5.9` и deployment target package. Xcode 14 и Swift 5.8 не смогут прочитать manifest. Поддержанная и проверенная сейчас toolchain matrix — Xcode 26.6 и Swift 6.3.3 в Swift 5 language mode. Xcode 15–26.5 может собрать package, но пока эти версии не входят в CI matrix, проект не гарантирует их совместимость.
 
 В Xcode откройте **File → Add Package Dependencies**, укажите `https://github.com/qa-point/xceasy.git` и добавьте product `XCEasy` в UI-test target. Эквивалентная зависимость в `Package.swift`:
 
@@ -83,7 +70,7 @@ XCEasy связывает lifecycle XCTest, ленивые UI locators и еди
 dependencies: [
     .package(
         url: "https://github.com/qa-point/xceasy.git",
-        from: "0.1.0"
+        from: "0.1.1"
     )
 ]
 ```

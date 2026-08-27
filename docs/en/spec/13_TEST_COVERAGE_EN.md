@@ -1,6 +1,6 @@
 # F13 — Test coverage and quality gates
 
-0.1.0 status: unit/UI coverage gate is implemented; diff coverage is deferred until stable history exists.
+0.1.1 status: unit/UI coverage gate is implemented; diff coverage is deferred until stable history exists.
 
 ## Goal
 

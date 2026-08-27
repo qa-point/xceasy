@@ -1,6 +1,6 @@
 # F02 — UI elements и interaction
 
-Статус 0.1.0: реализовано и проверено; Objective-C forwarding остаётся внутренним technical-debt boundary.
+Статус 0.1.1: реализовано и проверено; Objective-C forwarding остаётся внутренним technical-debt boundary.
 
 ## Цель
 

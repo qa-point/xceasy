@@ -1,6 +1,6 @@
 # F09 — Self-healing and test generation
 
-0.1.0 status: controlled selector-healing workflow is implemented; full generated-test acceptance remains open.
+0.1.1 status: controlled selector-healing workflow is implemented; full generated-test acceptance remains open.
 
 ## Goal
 
