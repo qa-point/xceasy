@@ -34,6 +34,8 @@ XCEasy пишет данные одновременно для двух ауди
 
 Перед console, log, JSONL и Allure sink применяется redaction. Значения, похожие на token, password, Authorization/cookie или другой secret, не должны попадать в artifacts. Masked/hidden Allure parameters заменяются до записи. Всё равно не передавайте реальные production secrets в названия шагов или accessibility identifiers.
 
+Пошаговый поиск первой причины и матрица «симптом → evidence» приведены в [playbook расследования падений](16_FAILURE_INVESTIGATION_PLAYBOOK_RU.md).
+
 ## Как анализировать производительность
 
 Timing автоматически охватывает `ui.query`, `ui.tap` и другие actions, UI/value assertions, API requests, `step` и fixtures. `performance-summary.json` агрегирует одинаковые operation codes, чтобы отличить единичный медленный вызов от систематического замедления.

@@ -27,6 +27,8 @@
 
 ## 4. Правила диагностики
 
+При первичном разборе runtime-падения теста используйте пользовательский [playbook расследования падений](guide/16_FAILURE_INVESTIGATION_PLAYBOOK_RU.md) до предложения изменений.
+
 - Начинать с первого causal failure, а не последующих teardown/reporting ошибок.
 - Связывать утверждение с event ID, test ID, source location или artifact.
 - Разделять product defect, test defect, infrastructure failure и unknown.

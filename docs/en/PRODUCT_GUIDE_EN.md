@@ -20,6 +20,8 @@ The short foundations—purpose, architecture, installation, quick start, and Gi
 | 12 | [Allure](guide/12_ALLURE_EN.md) | Lifecycle, metadata, parameters, artifacts, and the TestOps boundary. |
 | 13 | [Logs, diagnostics, and performance](guide/13_LOGS_DIAGNOSTICS_PERFORMANCE_EN.md) | JSONL, diagnostic bundles, timings, budgets, and healing evidence. |
 | 14 | [Verifying the repository itself](guide/14_REPOSITORY_CHECKS_EN.md) | Local and CI quality gates for XCEasy maintainers. |
+| 15 | [Parameterized tests, annotations, and markers](guide/15_PARAMETERIZED_TESTS_AND_ANNOTATIONS_EN.md) | Independent dataset executions, compile-time metadata, and custom Allure labels. |
+| 16 | [Failure investigation playbook](guide/16_FAILURE_INVESTIGATION_PLAYBOOK_EN.md) | First-cause workflow, artifact interpretation, classification, and handoff checklist. |
 
 Formal guarantees and target requirements live separately in the [feature specifications](spec/README_EN.md). When documents differ, the specification and project constitution take precedence over this user guide.
 

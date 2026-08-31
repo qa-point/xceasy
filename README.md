@@ -364,6 +364,8 @@ On failure, XCEasy adds available screenshots, UI evidence, and a redacted diagn
 
 [Learn more: files, event schemas, performance budgets, and self-healing evidence](docs/en/guide/13_LOGS_DIAGNOSTICS_PERFORMANCE_EN.md)
 
+[When a test fails: first-cause investigation playbook](docs/en/guide/16_FAILURE_INVESTIGATION_PLAYBOOK_EN.md)
+
 ## Verifying the repository itself
 
 This section is for XCEasy maintainers, not consumers of the released package:

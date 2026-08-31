@@ -107,3 +107,5 @@ XCEasyAllureConfig.apply(linkPatterns: [
 ## Failures and nested steps
 
 If XCTest abruptly interrupts a UI operation, XCEasy closes unfinished steps, marks the affected branch as failed, and attaches the screenshot/log to the failed or deepest known step. This prevents reports from remaining in `running` state and preserves failure context.
+
+For the recommended order of inspecting the failed branch, screenshot, UI hierarchy, JSONL, log, and manifest, follow the [failure investigation playbook](16_FAILURE_INVESTIGATION_PLAYBOOK_EN.md).

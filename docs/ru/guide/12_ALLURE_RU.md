@@ -107,3 +107,5 @@ XCEasyAllureConfig.apply(linkPatterns: [
 ## Падения и вложенные шаги
 
 Если XCTest аварийно прерывает UI-операцию, XCEasy закрывает незавершённые шаги, отмечает проблемную ветку как failed и прикрепляет screenshot/log к failed или самому глубокому известному шагу. Благодаря этому отчёт не остаётся в состоянии `running` и содержит контекст падения.
+
+Рекомендуемый порядок проверки failed branch, screenshot, UI hierarchy, JSONL, log и manifest приведён в [playbook расследования падений](16_FAILURE_INVESTIGATION_PLAYBOOK_RU.md).

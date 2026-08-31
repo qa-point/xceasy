@@ -34,6 +34,8 @@ When possible, XCEasy stores a screenshot, bounded accessibility-tree snapshot, 
 
 Redaction runs before console, log, JSONL, and Allure sinks. Values resembling a token, password, Authorization/cookie, or another secret should not enter artifacts. Masked/hidden Allure parameters are replaced before writing. Even so, do not put real production secrets in step names or accessibility identifiers.
 
+For a step-by-step first-cause workflow and a symptom-to-evidence matrix, use the [failure investigation playbook](16_FAILURE_INVESTIGATION_PLAYBOOK_EN.md).
+
 ## How to analyze performance
 
 Timing automatically covers `ui.query`, `ui.tap` and other actions, UI/value assertions, API requests, `step`, and fixtures. `performance-summary.json` aggregates matching operation codes so you can distinguish an isolated slow call from a systematic slowdown.

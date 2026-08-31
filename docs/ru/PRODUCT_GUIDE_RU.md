@@ -20,6 +20,8 @@
 | 12 | [Allure](guide/12_ALLURE_RU.md) | Lifecycle, metadata, parameters, artifacts и TestOps boundary. |
 | 13 | [Логи, диагностика и производительность](guide/13_LOGS_DIAGNOSTICS_PERFORMANCE_RU.md) | JSONL, diagnostic bundle, timings, budgets и healing evidence. |
 | 14 | [Проверка самого репозитория](guide/14_REPOSITORY_CHECKS_RU.md) | Локальные и CI quality gates, предназначенные для разработчиков XCEasy. |
+| 15 | [Параметризованные тесты, аннотации и маркеры](guide/15_PARAMETERIZED_TESTS_AND_ANNOTATIONS_RU.md) | Независимые executions наборов данных, compile-time metadata и пользовательские Allure labels. |
+| 16 | [Playbook расследования падений](guide/16_FAILURE_INVESTIGATION_PLAYBOOK_RU.md) | Поиск первой причины, разбор artifacts, classification и чек-лист передачи. |
 
 Формальные гарантии и target requirements находятся отдельно в [спецификациях по фичам](spec/README_RU.md). В случае расхождения спецификация и конституция имеют приоритет над пользовательским руководством.
 

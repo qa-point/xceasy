@@ -364,6 +364,8 @@ XCEasyConfig.apply(
 
 [Подробнее: файлы, схемы событий, performance budgets и self-healing evidence](docs/ru/guide/13_LOGS_DIAGNOSTICS_PERFORMANCE_RU.md)
 
+[Если тест упал: playbook поиска первой причины](docs/ru/guide/16_FAILURE_INVESTIGATION_PLAYBOOK_RU.md)
+
 ## Проверка самого репозитория
 
 Этот раздел нужен разработчикам XCEasy, а не пользователям готового package:

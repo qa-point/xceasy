@@ -27,6 +27,8 @@ AI in XCEasy is an engineer subject to the same review rules, not a source of un
 
 ## 4. Diagnosis rules
 
+For runtime test-failure triage, follow the user-facing [failure investigation playbook](guide/16_FAILURE_INVESTIGATION_PLAYBOOK_EN.md) before proposing a change.
+
 - Start with the first causal failure, not subsequent teardown/reporting errors.
 - Link claims to event IDs, test IDs, source locations, or artifacts.
 - Distinguish product defect, test defect, infrastructure failure, and unknown.
