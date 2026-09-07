@@ -2,6 +2,15 @@
 
 All notable XCEasy changes are documented here. The project follows Semantic Versioning after the `0.1.0` contract baseline.
 
+## [0.1.2] - 2026-09-07
+
+### Changed
+
+- Documented failure investigation, the supported toolchain, and current API contracts in English and Russian.
+- Added a logo concept and aligned lint and public API validation tooling.
+- Installed ripgrep explicitly for hosted contract checks.
+- Preserved the 0.1.1 public API and runtime behavior.
+
 ## [0.1.1] - 2026-08-27
 
 ### Fixed
