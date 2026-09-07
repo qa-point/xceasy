@@ -30,5 +30,8 @@ jobs:
       - name: Install mise
         uses: jdx/mise-action@v3
 
+      - name: Install contract check dependencies
+        run: brew install ripgrep
+
       - name: Build and run unit tests
         run: ./scripts/check.sh ci
