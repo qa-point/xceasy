@@ -2,7 +2,7 @@
 
 Русский · [English](../en/TECHNICAL_GUIDE_EN.md) · [README](../../README_RU.md)
 
-Документ описывает фактическую архитектуру и production-контракт XCEasy 0.1.1. Требования по отдельным возможностям находятся в [спецификациях](spec/README_RU.md), принятые решения — в [`adr/`](adr/).
+Документ описывает фактическую архитектуру и production-контракт XCEasy 0.1.3. Требования по отдельным возможностям находятся в [спецификациях](spec/README_RU.md), принятые решения — в [`adr/`](adr/).
 
 ## 1. Поддерживаемая среда
 
@@ -12,7 +12,7 @@
 | Deployment target | iOS 15.0. |
 | Package manifest | Swift tools 5.9, Swift 5 language mode. |
 | Проверенная toolchain matrix | Xcode 26.6, Swift 6.3.3, simulator runtime iOS 26.5. |
-| Зависимость | Alamofire 5.10.x (`upToNextMajor`). |
+| Зависимость | Alamofire 5.12.0 (`exact`). |
 
 Xcode 15/Swift 5.9 является техническим минимумом manifest, но поддержанной считается только matrix из `xceasy.toolchain.json`, прошедшая CI.
 

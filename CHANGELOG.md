@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## [0.1.3] - 2026-09-09
 
+- Update Alamofire to 5.12.0 in the public package and development build; preserve public Swift APIs and telemetry schema 1.0.0.
 - Clarify diagnostic privacy policy and agent guidance without changing runtime evidence.
 
 - Harden public CI, pin GitHub Actions, scan secrets, and document private vulnerability reporting.
