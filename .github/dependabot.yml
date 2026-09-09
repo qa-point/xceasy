@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: swift
+    directories:
+      - /
+      - /XCEasyMacroPlugin
+      - /Tuist
+      - /XCEasy/Tuist
+      - /XCEasyIntegrationFixture/Tuist
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      swift-packages:
+        patterns: ["*"]

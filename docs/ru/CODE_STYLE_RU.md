@@ -48,7 +48,7 @@
 - Канонические keys/messages codes — английские; localized text является presentation field.
 - Логировать факт и evidence, не догадку. Hypothesis явно помечается как hypothesis.
 - Все события получают source/correlation IDs через общий emitter.
-- Redaction выполняется до sink. Нельзя сначала записать raw, затем очистить.
+- Точечная фильтрация учётных данных выполняется до текстового sink; нельзя сначала сохранить секреты, затем очистить. Сохраняйте намеренный UI/debug evidence согласно ADR 0021; не добавляйте тотальное маскирование UI как несвязанное улучшение.
 - Expected/actual хранятся раздельно; duration — числом и с единицей в имени.
 - Не менять event semantics без schema version/migration.
 

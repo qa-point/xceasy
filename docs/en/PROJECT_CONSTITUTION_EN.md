@@ -1,6 +1,6 @@
 # XCEasy Project Constitution
 
-Status: active and binding. Version: 1.1. Updated: August 11, 2026.
+Status: active and binding. Version: 2.0. Updated: September 9, 2026.
 
 ## 1. Mission
 
@@ -18,7 +18,7 @@ Every operation capable of failing a test must leave structured evidence: operat
 
 ### III. Secure by default
 
-Secrets, cookies, tokens, passwords, and personal data must not reach console output, JSONL, Allure, or attachments. Redaction occurs before every sink. New network/UI payload logging without redaction tests is prohibited.
+Protect infrastructure credentials and retain targeted credential filtering before text sinks. UI trees, field values, screenshots, and explicit debug output are useful test evidence and may contain application data; do not blanket-mask or disable them without an explicit user requirement. Existing filtering is best effort and does not guarantee anonymization. Use synthetic test accounts and control artifact access/retention. New credential-bearing text logging requires scoped redaction tests; raw HTTP header/body logging remains prohibited. See [ADR 0021](adr/0021-diagnostic-privacy-boundary.md).
 
 ### IV. Determinism and isolation
 
@@ -85,3 +85,4 @@ An amendment requires dedicated review, motivation, and migration impact. Versio
 
 - 1.0, 2026-08-05 — initial version based on the repository audit and AI-first direction.
 - 1.1, 2026-08-11 — added the binding production/release contract and single version source.
+- 2.0, 2026-09-09 — preserve diagnostic UI evidence and clarify targeted credential filtering.

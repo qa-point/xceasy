@@ -100,7 +100,7 @@ Every test execution creates isolated, uniquely named files:
 
 A canonical event contains operation code, correlation IDs, source, status, duration, and privacy metadata. UI queries add locator chain, expected/final state, attempts, candidate count, timeline, and reason code. Localized text is not a machine contract.
 
-Redaction runs before console, file, JSONL, and Allure sinks. Password/token/cookie/Authorization-like values must not reach temporary output. Attachments record size limits, SHA-256, MIME type, producer, privacy, and truncation metadata.
+Text sinks apply the existing targeted credential filter. It does not reliably cover every JSON/header/URL format or anonymize arbitrary values. UI trees, screenshots, and explicit debug output preserve diagnostic detail and may contain application data. Artifact privacy metadata is not proof of complete anonymization. Consumers should use synthetic data and control sharing/retention; blanket UI masking is not the default policy. Attachments record size limits, SHA-256, MIME type, producer, privacy, and truncation metadata.
 
 XCEasy creates `allure-results` only. HTML generation and TestOps upload belong to a separate CLI/CI workflow.
 

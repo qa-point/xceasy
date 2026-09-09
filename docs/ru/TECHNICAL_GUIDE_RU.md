@@ -100,7 +100,7 @@ Value assertions и UI assertions создают локализованный Al
 
 Canonical event содержит operation code, correlation IDs, source, status, duration и privacy metadata. UI query дополнительно хранит locator chain, expected/final state, attempts, candidate count, timeline и reason code. Локализованный текст не является машинным контрактом.
 
-Redaction выполняется до console, file, JSONL и Allure sinks. Password/token/cookie/Authorization и похожие значения не должны попадать даже во временный output. Attachments имеют size limit, SHA-256, MIME type, producer, privacy и truncation metadata.
+Текстовые sinks используют существующий точечный фильтр учётных данных. Он не покрывает надёжно все форматы JSON/headers/URL и не обезличивает произвольные значения. Дерево UI, скриншоты и явный debug output сохраняют диагностические детали и могут содержать данные приложения. Privacy metadata артефакта не доказывает полное обезличивание. Используйте синтетические данные и управляйте доступом/хранением; тотальное маскирование UI не является политикой по умолчанию. Attachments имеют size limit, SHA-256, MIME type, producer, privacy и truncation metadata.
 
 XCEasy создаёт только `allure-results`. HTML и upload в TestOps выполняются отдельным CLI/CI workflow.
 
