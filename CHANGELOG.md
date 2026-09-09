@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Harden public CI, pin GitHub Actions, scan secrets, and document private vulnerability reporting.
+
 All notable XCEasy changes are documented here. The project follows Semantic Versioning after the `0.1.0` contract baseline.
 
 ## [0.1.2] - 2026-09-07
