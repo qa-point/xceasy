@@ -12,4 +12,4 @@ Preserve current diagnostic behavior. Apply targeted filtering to supported cred
 
 ## Consequences
 
-Constitution 1.2, F04, technical/security guides and agent instructions describe this boundary. Known filter gaps may be fixed separately with scoped regression tests. No Swift API, runtime behavior, artifact schema or published release changes here.
+Constitution 2.0, F04, technical/security guides and agent instructions describe this boundary. Known filter gaps may be fixed separately with scoped regression tests. No Swift API, runtime behavior, artifact schema or published release changes here.

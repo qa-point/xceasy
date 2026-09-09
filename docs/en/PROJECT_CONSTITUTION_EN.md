@@ -1,6 +1,6 @@
 # XCEasy Project Constitution
 
-Status: active and binding. Version: 1.2. Updated: September 9, 2026.
+Status: active and binding. Version: 2.0. Updated: September 9, 2026.
 
 ## 1. Mission
 
@@ -85,4 +85,4 @@ An amendment requires dedicated review, motivation, and migration impact. Versio
 
 - 1.0, 2026-08-05 — initial version based on the repository audit and AI-first direction.
 - 1.1, 2026-08-11 — added the binding production/release contract and single version source.
-- 1.2, 2026-09-09 — preserve diagnostic UI evidence and clarify targeted credential filtering.
+- 2.0, 2026-09-09 — preserve diagnostic UI evidence and clarify targeted credential filtering.
