@@ -24,7 +24,7 @@ Produce a secure, self-contained diagnostic bundle useful to humans, Allure, and
 - `F04-REQ-002`: the envelope contains schema version, timestamp, monotonic time, level, event, IDs, source, duration, data, attachments, and privacy.
 - `F04-REQ-003`: the bundle contains `manifest.json`, `events.jsonl`, `summary.json`, artifact subdirectories, and a reproduction summary.
 - `F04-REQ-004`: the artifact registry stores ID, relative path, MIME, size, SHA-256, producer event, and truncation.
-- `F04-REQ-005`: redaction occurs before console/file/Allure/attachment sinks and is verified by canary tests.
+- `F04-REQ-005`: targeted filtering of supported credential forms occurs before text sinks and is verified by canary tests. UI evidence and explicit debug output retain useful detail under [ADR 0021](../adr/0021-diagnostic-privacy-boundary.md); this is not a claim of complete anonymization.
 - `F04-REQ-006`: failure taxonomy distinguishes product, test, infrastructure, framework, and unknown; fingerprints use stable fields.
 - `F04-REQ-007`: Allure is an adapter of the canonical model; diagnostics work without Allure.
 - `F04-REQ-008`: telemetry errors remain visible but never replace the original test outcome.
@@ -41,7 +41,7 @@ The detailed contract for duration spans, aggregates, and regression findings is
 - Every failed test creates a valid bundle readable without console output.
 - The bundle identifies the first causal failure, expected/actual, source, and evidence IDs.
 - Repeated instances of one defect produce the same fingerprint after dynamic-data normalization.
-- Canary secrets are byte-wise absent from all artifacts.
+- Canary credentials covered by the tested filtering rules are absent from the corresponding text artifacts. UI/screenshot data is not asserted to be fully anonymized.
 - Golden fixtures detect incompatible schema/artifact changes.
 - A built-in successful action and a failed assertion have matching human-readable representations in text logs and Allure while remaining reconstructable from canonical events without parsing localized text.
 - A changed indexed artifact or `.xcresult` bundle fails manifest validation, and the diagnostic summary exposes stable conclusion/action reason codes.

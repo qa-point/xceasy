@@ -24,7 +24,7 @@
 - `F04-REQ-002`: envelope содержит schema version, timestamp, monotonic time, level, event, IDs, source, duration, data, attachments и privacy.
 - `F04-REQ-003`: bundle содержит `manifest.json`, `events.jsonl`, `summary.json`, artifact subdirectories и reproduction summary.
 - `F04-REQ-004`: artifact registry хранит ID, relative path, MIME, size, SHA-256, producer event и truncation.
-- `F04-REQ-005`: redaction применяется до console/file/Allure/attachment sinks и проверяется canary tests.
+- `F04-REQ-005`: поддерживаемые формы учётных данных точечно фильтруются до текстовых sinks и проверяются canary tests. UI evidence и явный debug output сохраняют полезные детали согласно [ADR 0021](../adr/0021-diagnostic-privacy-boundary.md); полное обезличивание не гарантируется.
 - `F04-REQ-006`: failure taxonomy различает product, test, infrastructure, framework и unknown; fingerprint строится из стабильных полей.
 - `F04-REQ-007`: Allure является adapter canonical model; отсутствие Allure не отключает diagnostics.
 - `F04-REQ-008`: telemetry errors видимы, но не заменяют исходный test outcome.
@@ -41,7 +41,7 @@
 - Каждый failed test создаёт валидный bundle, читаемый без console output.
 - Bundle однозначно показывает first causal failure, expected/actual, source и evidence IDs.
 - Повтор одного дефекта даёт одинаковый fingerprint после нормализации динамических данных.
-- Canary secrets отсутствуют побайтово во всех artifacts.
+- Canary-значения поддерживаемых проверенных правил отсутствуют в соответствующих текстовых artifacts. Полное обезличивание UI/скриншотов не заявляется.
 - Golden fixtures обнаруживают incompatible schema/artifact changes.
 - Успешный built-in action и failed assertion имеют согласованное человекочитаемое представление в text logs и Allure и при этом восстанавливаются из canonical events без parsing локализованного текста.
 - Изменение indexed artifact или `.xcresult` bundle приводит к ошибке manifest validation, а diagnostic summary предоставляет стабильные reason codes для conclusion и actions.

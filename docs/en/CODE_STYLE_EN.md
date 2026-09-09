@@ -48,7 +48,7 @@ Follow Swift API Design Guidelines and the existing project structure. This docu
 - Canonical keys/message codes are English; localized text is a presentation field.
 - Log facts and evidence, not guesses. Mark hypotheses explicitly.
 - Every event gets source/correlation IDs through a common emitter.
-- Redact before a sink; never write raw data and sanitize it later.
+- Apply targeted credential filtering before text sinks; never persist credentials and sanitize them afterward. Preserve intentional UI/debug evidence under ADR 0021; do not introduce blanket UI masking as an unrelated cleanup.
 - Store expected and actual separately; durations are numeric with units in field names.
 - Do not alter event semantics without schema versioning and migration.
 

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Clarify diagnostic privacy policy and agent guidance without changing runtime evidence.
+
 - Harden public CI, pin GitHub Actions, scan secrets, and document private vulnerability reporting.
 
 All notable XCEasy changes are documented here. The project follows Semantic Versioning after the `0.1.0` contract baseline.

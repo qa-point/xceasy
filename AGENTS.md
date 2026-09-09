@@ -17,7 +17,7 @@ Non-negotiable summary:
 
 - Preserve unrelated user changes and never edit generated files manually.
 - Reproduce defects and add regression coverage before or with the fix.
-- Never expose secrets; redact before every log/report sink.
+- Protect infrastructure credentials and retain targeted text filtering. Preserve useful UI trees, field values, screenshots, and explicit debug output; do not introduce blanket masking or disable diagnostics without a user request. Follow `docs/en/SECURITY_EN.md`; existing filtering does not anonymize arbitrary test data.
 - Treat public Swift APIs, telemetry schemas, and artifact layouts as versioned contracts.
 - Avoid fatal errors, force unwraps, silent error suppression, magic sleeps, and machine-specific paths on runtime paths.
 - Prefer stable accessibility identifiers and explicit, test-isolated dependencies.
