@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/Alamofire/Alamofire.git",
-            exact: "5.10.2"
+            exact: "5.12.0"
         ),
         .package(
             url: "https://github.com/swiftlang/swift-syntax.git",
